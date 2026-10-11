@@ -1,0 +1,63 @@
+[project]
+name = "thermal-regeneration-gate"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy==2.5.3",
+  "scipy==1.18.1",
+  "scikit-learn==1.9.1",
+  "python-docx==1.2.0",
+  "pymupdf==1.27.2.3",
+  "polars==2.0.0",
+  "pydantic==2.13.5",
+  "openpyxl==3.1.5",
+  "matplotlib==3.11.2",
+  "pillow==12.3.0",
+  "pytest==9.1.1",
+  "ruff==0.16.10",
+  "basedpyright==1.40.2",
+]
+
+[tool.ruff]
+line-length = 110
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D", "E501", "PLR2004", "T201", "COM812", "ISC001", "N803", "N806", "N815", "C408", "RUF001", "RUF002", "RUF003", "EM101", "TRY003", "S311", "CPY001", "INP001", "ICN001", "EM102"]
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = ["S101"]
+# Keep the scientific train/test evaluation loop together for auditability.
+"run_temperature_validation.py" = ["PLR0915"]
+"repair_omw.py" = ["C901", "PLR0915"]
+"build_documents.py" = ["SLF001"]
+"doc_elements.py" = ["SLF001"]
+"doc_data_tables.py" = ["SLF001"]
+"endpoint_bounds.py" = ["PLR0913"]
+"expand_validate.py" = ["S101"]
+[tool.basedpyright]
+typeCheckingMode = "all"
+pythonVersion = "3.12"
+include = ["code", "tests"]
+extraPaths = ["code", ".artifact_deps"]
+reportAny = false
+reportExplicitAny = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+reportMissingTypeStubs = false
+reportImplicitStringConcatenation = false
+reportUnusedCallResult = false
+reportUnannotatedClassAttribute = false
+reportImplicitOverride = false
+reportImplicitRelativeImport = false
+
+
+
+
+
+
+[tool.pytest.ini_options]
+pythonpath = ["code"]
+testpaths = ["tests"]
+
+
+

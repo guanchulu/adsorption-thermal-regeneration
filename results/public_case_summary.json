@@ -1,0 +1,68 @@
+{
+  "case_id": "santori_luberti_2016_13x_model",
+  "capacity_mol_kg": 5.362,
+  "dry_cp_kJ_kg_K": 0.858,
+  "pressure_leg": {
+    "temperature_K": 298.0,
+    "q_initial_mol_kg": 2.6336099465961276,
+    "q_after_pressure_mol_kg": 2.3527736245925213,
+    "q_final_mol_kg": 2.3527736245925213,
+    "release_mol_kg": 0.2808363220036063,
+    "dry_heat_kJ_kg": 0.0,
+    "binding_heat_kJ_kg": 10.298283121434478,
+    "retained_heat_kJ_kg": 0.0,
+    "path_heat_kJ_kg": 10.298283121434478,
+    "reduced_heat_kJ_kg": 10.298283121434478
+  },
+  "temperature_cap": {
+    "temperature_K": 423.0,
+    "q_initial_mol_kg": 2.6336099465961276,
+    "q_after_pressure_mol_kg": 2.3527736245925213,
+    "q_final_mol_kg": 0.09144407327687007,
+    "release_mol_kg": 2.5421658733192576,
+    "dry_heat_kJ_kg": 107.25,
+    "binding_heat_kJ_kg": 112.36692666733379,
+    "retained_heat_kJ_kg": 4.298417200351935,
+    "path_heat_kJ_kg": 223.91534386768572,
+    "reduced_heat_kJ_kg": 219.6169266673338
+  },
+  "budgets": [
+    {
+      "budget_kJ_kg": 25.0,
+      "full_temperature_K": 304.95263068027623,
+      "full_release_mol_kg": 0.4919249418706704,
+      "full_heat_kJ_kg": 24.99999999999996,
+      "unused_budget_kJ_kg": 3.907985046680551e-14,
+      "reduced_temperature_K": 305.2441365219436,
+      "reduced_release_mol_kg": 0.5003213583731316,
+      "actual_heat_at_reduced_target_kJ_kg": 25.605378963180698,
+      "over_budget_at_reduced_target_kJ_kg": 0.6053789631806978,
+      "at_temperature_cap": false
+    },
+    {
+      "budget_kJ_kg": 50.0,
+      "full_temperature_K": 317.0637541767437,
+      "full_release_mol_kg": 0.8251878517622624,
+      "full_heat_kJ_kg": 50.000000000000114,
+      "unused_budget_kJ_kg": 0.0,
+      "reduced_temperature_K": 317.80154563109147,
+      "reduced_release_mol_kg": 0.8450114122446344,
+      "actual_heat_at_reduced_target_kJ_kg": 51.53386028615246,
+      "over_budget_at_reduced_target_kJ_kg": 1.5338602861524606,
+      "at_temperature_cap": false
+    },
+    {
+      "budget_kJ_kg": 100.0,
+      "full_temperature_K": 340.38041605836264,
+      "full_release_mol_kg": 1.459987003313993,
+      "full_heat_kJ_kg": 100.00000000000006,
+      "unused_budget_kJ_kg": 0.0,
+      "reduced_temperature_K": 341.71235480799743,
+      "reduced_release_mol_kg": 1.495858618544003,
+      "actual_heat_at_reduced_target_kJ_kg": 102.88213182519509,
+      "over_budget_at_reduced_target_kJ_kg": 2.8821318251950885,
+      "at_temperature_cap": false
+    }
+  ],
+  "status": "literature-model illustration; heat capacity assumed in source; no cycle-duty validation; fitted DSL applicability at 298 and above323K is not independently validated"
+}

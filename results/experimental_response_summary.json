@@ -1,0 +1,17 @@
+{
+  "groups": 122,
+  "doi_labels": 72,
+  "material_hashes": 116,
+  "distinct_selected_curves": 244,
+  "original_point_records": 5456,
+  "high_temperature_comparison_points": 2522,
+  "highest_temperature_atleast353K": 14,
+  "unknown_convention_groups": 115,
+  "pair_mean_response_linear_median": 0.25208251489905176,
+  "pair_mean_response_log_median": 0.2540375433780647,
+  "inversion_pairs_linear": 2,
+  "inversion_pairs_log": 2,
+  "inversion_pairs_both_same_point": 2,
+  "pair_max_interpolation_sensitivity_median": 0.0027245400202600715,
+  "pair_max_interpolation_sensitivity_max": 0.04816135246532326
+}

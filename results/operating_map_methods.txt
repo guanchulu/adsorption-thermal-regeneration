@@ -1,0 +1,48 @@
+OPERATING MAP: METHODS AND NUMERICAL SCOPE
+
+Reference system: Q=4 mol/kg, C=1 kJ/(kg K), m=1, Ta=298 K,
+fa=0.15 bar, fd=0.10 bar, Tmax=423 K. These are declared theoretical
+resource settings, not fitted or measured material properties.
+
+36 reference budgets: B=25,30,...,200 kJ/kg. Six additional calculations:
+C=0.5 and 2 kJ/(kg K), each at B=50,100,200 kJ/kg.
+Pressure-first isothermal depressurization followed by heating at fixed fd;
+heat includes dry-bed sensible, binding and retained-gas sensible terms.
+No pressure-work, heat-recovery, kinetics or mixture-performance claim.
+
+At each budget, resource_bracket supplies a reduced-model upper bound and
+an analytical feasible construction. improve_witness supplies a multistart
+SLSQP feasible candidate. endpoint_case supplies an endpoint-cost ceiling
+covering the full temperature domain and a constructive endpoint candidate.
+The maximum feasible candidate and minimum valid ceiling are retained.
+Every retained witness is reintegrated by heat_path before CSV export.
+Witness energies and entropies are mathematical constructions, not measured
+material parameters. SLSQP improves feasibility only; it is not a global proof.
+
+The temperature enclosure uses the existing 16-bin initial partition and
+adaptive bisection to an active upper-bound-bin width <=0.05 K. All bins
+remain represented. Existing supporting-line and 1e-8 relative-plus-absolute
+numerical guards are preserved. Standard double precision is used;
+this is not formal interval arithmetic or a machine-verified certificate.
+
+At a sampled B, any release target <= feasible_mol_kg is met or exceeded by
+an explicit budget-feasible witness. Targets > refined_upper_mol_kg are
+excluded within the declared model and numerical enclosure. The intervening
+range is unresolved, not necessarily physically infeasible.
+
+For each budget cell [Bi,Bi+1], operating_map_cells.csv uses the largest
+feasible witness at budgets <=Bi and the smallest upper bound at budgets
+>=Bi+1. Since the admissible set expands with heat budget, these constant
+cell limits enclose all budgets in that cell. Linear or spline interpolation
+between pointwise limits has no certification claim. Different dry heat
+capacities are not interpolated or mixed in these monotonicity cells.
+
+Reference map: median relative upper-to-feasible gap=0.949572%;
+range=0.204931% to 1.168206%.
+Reduced-optimal design heat-budget excess=2.868887% to 3.291788%.
+Budget excess is Hpath(reduced design)/B - 1; it is not an energy saving.
+Total computations=42; elapsed=19.734 seconds.
+
+Exact source calls: path_design.resource_bracket, path_design.improve_witness,
+run_endpoint_study.endpoint_case, path_model.heat_path.
+Run from latex_v5: uv run --project .. --frozen python code/run_operating_map.py

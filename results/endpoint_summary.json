@@ -1,0 +1,40 @@
+{
+  "0": {
+    "n": 54,
+    "old_relative_gap_min": 4.7251506214610216e-08,
+    "old_relative_gap_median": 0.010593977314207,
+    "old_relative_gap_max": 0.07258921953676196,
+    "new_relative_gap_min": 4.7251506214610216e-08,
+    "new_relative_gap_median": 0.004557397186067672,
+    "new_relative_gap_max": 0.027872282736825175,
+    "upper_improvement_min": 0.0,
+    "upper_improvement_median": 0.0025817338196002654,
+    "upper_improvement_max": 0.021478560517476264
+  },
+  "1": {
+    "n": 27,
+    "old_relative_gap_min": 0.002765798576872612,
+    "old_relative_gap_median": 0.01777439662907299,
+    "old_relative_gap_max": 0.07258921953676196,
+    "new_relative_gap_min": 0.002049309992474122,
+    "new_relative_gap_median": 0.006189282307529813,
+    "new_relative_gap_max": 0.027872282736825175,
+    "upper_improvement_min": 6.949417707913241e-05,
+    "upper_improvement_median": 0.0037759193063107155,
+    "upper_improvement_max": 0.021478560517476264
+  },
+  "4": {
+    "n": 27,
+    "old_relative_gap_min": 4.7251506214610216e-08,
+    "old_relative_gap_median": 0.005919528472695413,
+    "old_relative_gap_max": 0.03340623144987619,
+    "new_relative_gap_min": 4.7251506214610216e-08,
+    "new_relative_gap_median": 0.0033917247882799813,
+    "new_relative_gap_max": 0.021060949082628302,
+    "upper_improvement_min": 0.0,
+    "upper_improvement_median": 0.0014773167663496567,
+    "upper_improvement_max": 0.013867341075700201
+  },
+  "elapsed_seconds": 20.031000000002678,
+  "scope": "Analytical endpoint/temperature-bin inequalities; convex tangent lower estimates with 1e-8 relative-plus-absolute guard. Standard floating point, not formal interval arithmetic."
+}

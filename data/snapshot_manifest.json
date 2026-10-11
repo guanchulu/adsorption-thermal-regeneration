@@ -1,0 +1,13 @@
+{
+  "commit": "9e1ee472967d66ec7845e23c5d5b986eca5ff020",
+  "archive_sha256": "46ee97a410cd1b92455714df144ca2641f108254d3de0145c96af250197ac85f",
+  "source_url": "https://github.com/NIST-ISODB/isodb-library/tree/9e1ee472967d66ec7845e23c5d5b986eca5ff020",
+  "archive_bytes": 52654184,
+  "all_json": 54419,
+  "curve_json": 39988,
+  "parsed_curve": 39988,
+  "non_curve_json": 14431,
+  "parse_errors": 0,
+  "materials_dictionary": 9328,
+  "articles_dictionary": 4648
+}

@@ -1,0 +1,82 @@
+RASPA / CRAFTED FUGACITY AND ADSORPTION-HEAT SCOPE
+Audit date: 2026-10-07. Read-only inspection; no fitted data, model code or manuscript changed.
+Scope extension authorized afterward: implemented only code/gas_fugacity.py and tests/test_gas_fugacity.py; no existing fitted data, physical dictionary, benchmark or manuscript modified. Implementation evidence appended below.
+
+DECISION
+The CRAFTED pressure column is pressure, not a declaration that fugacity equals pressure. Its published workflow uses Peng-Robinson (PR). Prefer a deterministic PR conversion f_bar=phi(T,P)*P_bar before fitting/predicting the site dictionary, retaining original P for reporting. A pressure-coordinate pilot may remain as an explicitly declared low-pressure f approximately P approximation. It must not be described as exact ideal-gas source data.
+Published enthalpy already contains the -RT term. Reference positive adsorption heat is Qst_reference=-Enthalpy_kJ_per_mol, with no extra RT. Never take an absolute value indiscriminately: signed positive source enthalpies should remain negative heat or be separately flagged, not silently flipped.
+
+PRIMARY PAPER EVIDENCE
+CRAFTED paper DOI10.1038/s41597-023-02116-z, Methods / Grand canonical Monte Carlo simulations, explicitly identifies RASPA v2.0.45 and PR pressure-to-fugacity conversion. Its Eq4 is DeltaH=cov(U,N)/var(N)-RT; reported enthalpies are calculated by pyMSER. The original gas uptake is absolute adsorption in mol/kg. The quoted uSD is a simulation uncertainty measure, not a new experimental measurement.
+Publisher: https://www.nature.com/articles/s41597-023-02116-z
+Author paper mirrored by PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC10119274/
+Publisher full text was available via indexed search; direct publisher/PMC open requests encountered redirect/captcha. No secondary article was used for these factual conclusions.
+
+VERSION BOUNDARY
+The paper identifies v2.0.45. git ls-remote of the OFFICIAL iRASPA/RASPA2 repository resolved tag v2.0.45 to b24e6a7338686eea80753ccf1bd0d086690fd60b. This is the reviewed official tag, not proof that every archived CRAFTED2.0.1 simulation binary was built from exactly that commit. The inspected archived inputs do not contain a build hash; exact compiled revision/options for the expanded release remain unverified. Also inspected official current tag v2.0.50 / HEAD 6498ab1eec9c8e0f063dcd0d71dd7add372c529b; relevant behavior agrees.
+
+PINNED OFFICIAL CODE
+1. input.c line341 sets EquationOfState=PENG_ROBINSON; line778 initializes ComputeFugacityCoefficient to TRUE; line903 initializes component FugacityCoefficient to -1. An explicit nonnegative coefficient disables automatic computation.
+https://github.com/iRASPA/RASPA2/blob/b24e6a7338686eea80753ccf1bd0d086690fd60b/src/input.c#L339-L341
+https://github.com/iRASPA/RASPA2/blob/b24e6a7338686eea80753ccf1bd0d086690fd60b/src/input.c#L776-L778
+https://github.com/iRASPA/RASPA2/blob/b24e6a7338686eea80753ccf1bd0d086690fd60b/src/input.c#L901-L904
+2. equations_of_state.c implements standard PR kappa, alpha, a,b and fugacity expression. For pure gases, use the vapor root in this low-pressure domain.
+https://github.com/iRASPA/RASPA2/blob/b24e6a7338686eea80753ccf1bd0d086690fd60b/src/equations_of_state.c#L223-L230
+https://github.com/iRASPA/RASPA2/blob/b24e6a7338686eea80753ccf1bd0d086690fd60b/src/equations_of_state.c#L336-L351
+3. statistics.c line3864 subtracts ExternalTemperature from the fluctuation estimator expressed in Kelvin. Lines3875-3878 convert to kJ/mol and define heat Q=-H. Thus the printed enthalpy already includes -RT. The separate Widom insertion ENERGY output requires its own corrections; it is not the same field as the CRAFTED enthalpy CSV.
+https://github.com/iRASPA/RASPA2/blob/b24e6a7338686eea80753ccf1bd0d086690fd60b/src/statistics.c#L3859-L3878
+4. Official manual independently documents missing FugacityCoefficient -> PR, and explicit 1.0 -> imposed fugacity equals the supplied pressure number. It documents fluctuation enthalpy including -Ug-RT. For the rigid CO2/N2 definitions here, no internal conformational gas energy is being fitted.
+https://github.com/iRASPA/RASPA2/blob/6498ab1eec9c8e0f063dcd0d71dd7add372c529b/Docs/Examples/examples.tex#L494-L500
+https://github.com/iRASPA/RASPA2/blob/6498ab1eec9c8e0f063dcd0d71dd7add372c529b/Docs/Examples/examples.tex#L666-L690
+
+ARCHIVE CHECKS
+Read data/crafted_raw/schema_manifest.json: sampled inputs set MolFraction1.0 and list ExternalPressure100...1000000 Pa, with no FugacityCoefficient override. The requested <=1bar subset is its first10 pressures, 100,200,500,1000,2000,5000,10000,20000,50000,100000 Pa.
+Directly streamed CRAFTED-2.0.1.tar.xz without extraction and read FORCEFIELDS/DREIDING/CO2.def and N2.def. Both are rigid three-site molecules with explicit critical constants:
+CO2: Tc304.1282K, Pc7377300Pa, omega0.22394.
+N2: Tc126.192K, Pc3395800Pa, omega0.0372.
+These match the official ExampleDefinitions files and paper Table3. No pressure relabeling or fitted-data correction was performed.
+Release provenance: https://zenodo.org/records/10120180
+
+REPRODUCIBLE PURE-COMPONENT CONVERSION
+Use R=8.314462618 J mol^-1 K^-1, P in Pa, T in K.
+kappa=0.37464+1.54226*omega-0.26992*omega^2
+alpha=[1+kappa*(1-sqrt(T/Tc))]^2
+a=0.45724*alpha*(R*Tc)^2/Pc; b=0.07780*R*Tc/Pc
+A=a*P/(R*T)^2; B=b*P/(R*T)
+Solve Z^3+(B-1)Z^2+(A-3B^2-2B)Z-(AB-B^2-B^3)=0.
+Select largest real vapor root Z>B for the stated273/298/323K, 0<P<=1bar conditions.
+ln(phi)=Z-1-ln(Z-B)-A/(2sqrt(2)B)*ln[(Z+(1+sqrt(2))B)/(Z+(1-sqrt(2))B)]
+f_bar=exp(ln(phi))*P/100000. At P=0 take the analytic limit phi=1; zero-pressure points cannot enter a log-pressure basis directly.
+This conversion uses only gas properties and declared P,T, with no uptake/Qst labels. All train, held-out uptake and Qst query coordinates must use the SAME convention. Precompute the30 pressure-temperature values per gas; never apply a correction only to held-out data.
+
+NUMERICAL AUDIT AT1BAR (computed this turn from the above equations)
+gas,T_K,phi,100*(P/f-1)
+CO2,273,0.9929114427562412,0.7139163613707034
+CO2,298,0.9945357132660135,0.5494309214942206
+CO2,323,0.9957385348108995,0.4279702994431034
+N2,273,0.9992350878586089,0.07654976798605606
+N2,298,0.9995466422420981,0.045356338438096166
+N2,323,0.9997677925041160,0.023226142872867506
+These small coordinate differences justify calling f=P a low-pressure approximation, not an exact thermodynamic identity. They are not guarantees that nonidentifiable fitted weights or Qst errors change by the same small percentage.
+
+HEAT COMPARISON AND DERIVATIVE CAUTION
+For the fugacity-coordinate site model, Q_f=-R*dln(f)/d(1/T)|q equals the response-weighted site enthalpy sum(w_i E_i theta_i(1-theta_i))/sum(w_i theta_i(1-theta_i)). Compare this positive heat to NEGATIVE the published DeltaH. E_i are effective fitted enthalpy parameters, not bare potential-well binding energies. Adding RT to the weighted E_i or to -DeltaH would double-count a contribution already built into the heat convention.
+If using pressure coordinates, label Q_P=-R*dln(P)/d(1/T)|q as an approximate surrogate. Its relation to the fugacity derivative is
+Q_P=[Q_f+R*(partial ln(phi)/partial(1/T))_P]/[1+(partial ln(phi)/partial ln(P))_T].
+The R term here must use kJ/mol if Q is in kJ/mol. Do not quote the fixed-P fugacity temperature derivative alone as the total heat correction.
+Example numerical finite-difference check at CO2,1bar: the numerator correction is -0.04727/-0.04121/-0.03620kJ/mol at273/298/323K, but pressure derivative terms also act. A hypothetical Q_f30kJ/mol gives Q_P30.16779/30.12408/30.09242kJ/mol. This is a derived illustrative conversion, not a fitted CRAFTED result or a bound on refitting sensitivity.
+
+READY-TO-USE REPORTING
+Preferred: Training and prediction use PR fugacity computed from archived gas critical constants while plots retain the original pressure axis. Positive reference adsorption heat is the negative of the published fluctuation enthalpy; no additional RT correction is applied. Source simulation build hashes are unavailable, while the paper-reported RASPA2.0.45 convention is verified against its official source tag.
+Pilot fallback: The pressure-coordinate model uses f approximately P only over0.001-1bar. The underlying CRAFTED simulations use PR fugacity. The approximation was quantified from the declared gas constants and is explicitly separated from molecular-model validity and site-parameter identifiability.
+
+IMPLEMENTED PR HELPER / FINAL VERIFICATION
+API: from gas_fugacity import Gas, gas_fugacity
+result=gas_fugacity(pressure_bar_vector, temperature_kelvin_vector, Gas.CO2)
+result.fugacity_bar and result.coefficient are matching float vectors. Gas.N2 is also supported. Pressure range is0<=P<=1bar; temperature range273<=T<=323K. Out-of-domain, nonfinite or mismatched vectors raise GasFugacityError. At zero pressure phi=1 and f=0; the downstream logarithmic dictionary still requires positive f.
+The implemented log ratio uses log1p(2sqrt(2)B/[Z+(1-sqrt(2))B]) for stable dilute-gas evaluation, algebraically identical to the pinned PR expression. Constants are exactly the archived/published Tc,Pc,omega listed above. There are no learned correction parameters.
+Eight helper test cases pass: independently audited one-bar coefficients for both gases, zero/dilute ideal limits for both gases, and four invalid-domain cases. Combined with five physical-dictionary tests:13passed. Ruff passed; basedpyright0errors0warnings; no-excuse audit found no violations in the two added files.
+Executed all30source pressure-temperature coordinates per gas: positive finite fugacity and strictly increasing f along every isotherm. CO2 phi min0.9929114427562411/max0.9999957328342055; N2 min0.9992350878586088/max0.9999997663839701. Conversion time for30coordinates:2.009ms CO2,1.786ms N2 in this run. These values can be precomputed once per gas.
+Executed integration check for each gas: generate a35kJ/mol single-site uptake using PR fugacity; fit only273/298K uptake, predict323K. Held-out uptake and positive heat35kJ/mol recovered within1e-10; no additional RT introduced. This is a controlled numerical check, not empirical validation or uniqueness evidence.
+Final helper SHA256: fb4e8bace3a3e19f63ab631fb00963e4d04492ce086ad00903de1d245ddf53db
+Final helper-test SHA256: fb86d7d0861b4a583f51262f6689e69d9155201e6441eeb3c02dc2448a417068

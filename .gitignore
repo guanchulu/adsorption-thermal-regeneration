@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.pyo
+*.log
+data/*.parquet
+data/crafted_raw/*.tar.xz
+results/*.parquet
+results/**/*.parquet
+qa/*
+!qa/benchmark_protocol.txt
+figures/*.png
+figures/*.svg
+

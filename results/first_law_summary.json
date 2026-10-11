@@ -1,0 +1,34 @@
+{
+  "scope": "Numerical first-law closure within the declared model; not experimental validation",
+  "witness_cases": 54,
+  "evaluations": 486,
+  "enthalpy_reference_shifts_kj_mol": [
+    -1000,
+    0,
+    1000
+  ],
+  "max_reference_shift_difference_kj_kg": 2.3305801732931286e-12,
+  "max_original_vs_stored_heat_difference_kj_kg": 0.0,
+  "mesh_convergence": [
+    {
+      "steps": 250,
+      "max_absolute_error_kj_kg": 3.7976956463126044e-05,
+      "median_absolute_error_kj_kg": 2.0330719934236186e-06,
+      "max_relative_error": 2.2162649271351142e-07
+    },
+    {
+      "steps": 1000,
+      "max_absolute_error_kj_kg": 2.3735849765671446e-06,
+      "median_absolute_error_kj_kg": 1.270668619213211e-07,
+      "max_relative_error": 1.3851628066774424e-08
+    },
+    {
+      "steps": 4000,
+      "max_absolute_error_kj_kg": 1.4834921557849157e-07,
+      "median_absolute_error_kj_kg": 7.941672208744421e-09,
+      "max_relative_error": 8.657266015177356e-10
+    }
+  ],
+  "source": "results\\path_brackets.csv",
+  "independence": "tanh occupations, analytical gas enthalpy, stored-energy endpoints and outgoing enthalpy; original heat_path used only as comparator"
+}

@@ -1,0 +1,380 @@
+{
+  "audit_date": "2026-10-07",
+  "scope": "Primarysource discovery, fixed rawdownload andschema audit. Parentowns bulk normalization/analysis.",
+  "sources": [
+    {
+      "id": "crafted_v2_0_1",
+      "priority": 1,
+      "origin": "GCMC_simulation",
+      "dataset_doi": "10.5281/zenodo.10120180",
+      "publication_doi": "10.1038/s41597-023-02116-z",
+      "version": "2.0.1",
+      "publication_date": "2023-11-13",
+      "primary_url": "https://zenodo.org/records/10120180",
+      "download_status": "complete_archive_downloaded_and_MD5_verified",
+      "download": {
+        "record_id": 10120180,
+        "doi": "10.5281/zenodo.10120180",
+        "source_url": "https://zenodo.org/api/records/10120180/files/CRAFTED-2.0.1.tar.xz/content",
+        "filename": "CRAFTED-2.0.1.tar.xz",
+        "bytes": 55142744,
+        "md5": "e11e4f84cdd484db7811bc758faaed37",
+        "sha256": "f29f7b3d6b7d6c51fd113138bc4a811c448d4dcce66ed37fddbfa4141a238dde",
+        "accessed": "2026-10-07",
+        "license": {
+          "id": "cdla-sharing-1.0"
+        },
+        "local_file": null
+      },
+      "observed_archive": {
+        "total_members": 602588,
+        "real_data_files": {
+          "ENTHALPY_FILES": 97704,
+          "ISOTHERM_FILES": 97704,
+          "CIF_FILES": 8142,
+          "INPUT_FILES": 97704
+        },
+        "sidecars": {
+          "ENTHALPY_FILES": 97704,
+          "ISOTHERM_FILES": 97704,
+          "CIF_FILES": 8148,
+          "INPUT_FILES": 97704
+        }
+      },
+      "metadata_counts": {
+        "MOF_structures": 690,
+        "COF_structures": 667,
+        "unique_structures": 1357,
+        "gases": 2,
+        "temperatures_per_variant": 3,
+        "force_fields": 2,
+        "charge_schemes": 6,
+        "CO2_isotherms_expected": 48852,
+        "CO2_three_temperature_variant_groups_expected": 16284
+      },
+      "temperatures_K": [
+        273,
+        298,
+        323
+      ],
+      "pressure_grid_Pa": [
+        100,
+        200,
+        500,
+        1000,
+        2000,
+        5000,
+        10000,
+        20000,
+        50000,
+        100000,
+        200000,
+        500000,
+        1000000
+      ],
+      "isotherm_schema": [
+        "pressure[Pa]",
+        "mean_volume[mol/kg]",
+        "mean_error[mol/kg]"
+      ],
+      "enthalpy_schema": [
+        "Pressure_Pa",
+        "Enthalpy_kj/mol",
+        "Uncertainty_kj/mol"
+      ],
+      "enthalpy_sign": "negative in inspected sample; preserve reported sign",
+      "file_key": "<charge>_<structure>_<forcefield>_<gas>_<T>.csv; parse from known prefixes/right-hand suffixes to preserve underscores inside structure IDs",
+      "pairing": "ISOTHERM_FILES and ENTHALPY_FILES share basename; INPUT_FILES uses same stem plus.input",
+      "sampling_verified_examples": {
+        "ENTHALPY_FILES": {
+          "archive_path": "CRAFTED-2.0.1/ENTHALPY_FILES/DDEC_LIHRIE_UFF_CO2_323.csv",
+          "bytes": 1037,
+          "content": "# Pressure_Pa,Enthalpy_kj/mol,Uncertainty_kj/mol\n1.000000000000000000e+02,-2.726957000000000164e+01,2.430520000000000014e+00\n2.000000000000000000e+02,-2.437104000000000070e+01,9.339100000000000179e-01\n5.000000000000000000e+02,-2.533231999999999928e+01,1.386549999999999949e+00\n1.000000000000000000e+03,-2.520150999999999897e+01,9.889499999999999957e-01\n2.000000000000000000e+03,-2.539328000000000074e+01,5.798600000000000421e-01\n5.000000000000000000e+03,-2.517991999999999919e+01,5.565299999999999692e-01\n1.000000000000000000e+04,-2.523954000000000164e+01,5.976399999999999491e-01\n2.000000000000000000e+04,-2.486665999999999954e+01,2.646700000000000164e-01\n5.000000000000000000e+04,-2.504082999999999970e+01,3.339599999999999791e-01\n1.000000000000000000e+05,-2.514654000000000167e+01,5.331999999999999934e-02\n2.000000000000000000e+05,-2.490384999999999849e+01,2.124300000000000077e-01\n5.000000000000000000e+05,-2.503817000000000093e+01,3.832099999999999951e-01\n1.000000000000000000e+06,-2.511619999999999919e+01,6.361999999999999877e-01\n"
+        },
+        "ISOTHERM_FILES": {
+          "archive_path": "CRAFTED-2.0.1/ISOTHERM_FILES/DDEC_LIHRIE_UFF_CO2_323.csv",
+          "bytes": 1029,
+          "content": "# pressure[Pa],mean_volume[mol/kg],mean_error[mol/kg]\n1.000000000000000000e+02,2.529999999999999833e-05,9.571000000000000080e-04\n2.000000000000000000e+02,1.591999999999999936e-04,2.395200000000000107e-03\n5.000000000000000000e+02,1.410999999999999874e-04,2.255599999999999966e-03\n1.000000000000000000e+03,3.654999999999999937e-04,3.618500000000000189e-03\n2.000000000000000000e+03,7.563000000000000061e-04,5.276999999999999573e-03\n5.000000000000000000e+03,1.639300000000000002e-03,7.680900000000000054e-03\n1.000000000000000000e+04,3.503099999999999877e-03,1.142269999999999917e-02\n2.000000000000000000e+04,6.821599999999999712e-03,1.582269999999999857e-02\n5.000000000000000000e+04,1.643330000000000138e-02,2.067389999999999853e-02\n1.000000000000000000e+05,3.452039999999999970e-02,2.928139999999999910e-02\n2.000000000000000000e+05,6.491529999999999523e-02,4.176900000000000057e-02\n5.000000000000000000e+05,1.666819999999999968e-01,6.447619999999999740e-02\n1.000000000000000000e+06,2.896546999999999872e-01,8.696760000000000601e-02\n"
+        }
+      },
+      "simulation_input_evidence": {
+        "type": "MonteCarlo",
+        "cycles": 10000,
+        "MolFraction": 1.0,
+        "ExternalTemperature": 323,
+        "ExternalPressure": "13 numeric Pa nodes above",
+        "HeliumVoidFraction": 0.0,
+        "FugacityCoefficient": "not explicitly present in inspected input; EOS/default handling not established here"
+      },
+      "license": {
+        "generated_data": "CDLA-Sharing-1.0",
+        "MOF_CIF": "CC-BY-4.0",
+        "COF_CIF": "MIT",
+        "RASPA_definitions": "MIT"
+      },
+      "limitations": [
+        "Exclude AppleDouble basenames beginning ._.",
+        "Version2.0.1 corrects MOF2bar/5bar uptake and enthalpy; do not mix previousversions.",
+        "All simulated; forcefield/charge realizations are not independent experiments or structures.",
+        "Maximum observed temperature323K; not high-temperature regeneration validation.",
+        "Uncertainty can greatly exceed weak low-pressure uptake; retain uncertainty and quality flags.",
+        "Pressure is not certified fugacity. Reference exporter supports total guest-count loading, but complete final-CSV lineage was not replayed.",
+        "Report unique structures and structure-model-temperature records separately."
+      ],
+      "recommended_use": "Primary immediate large three-temperature uptake+enthalpy stress test; hold out whole structures, keep all forcefield/charge variants of a structure in the same split.",
+      "reference_exporter_audit": {
+        "tag": "v1.0.0",
+        "commit": "a3fbb2c02994eaa914379c462828eed1f2c9a5e8",
+        "code_zip": "data/crafted_raw/nanopore-adsorption-experiment-v1.0.0.zip",
+        "sha256": "ac34c9aca286ce3047c9a7c6fd75813ae2d02c3f587df944dd1c8b85a3297c6a",
+        "loading_basis": "Direct MC guest count converted by framework mass to mol/kg; no bulk-density subtraction in cited extraction chain. Supports a total simulation loading basis, not an experimental absolute measurement.",
+        "uptake_proof_url": "https://github.com/st4sd/nanopore-adsorption-experiment/blob/a3fbb2c02994eaa914379c462828eed1f2c9a5e8/bin/parse_output.py#L80-L114",
+        "writer_proof_url": "https://github.com/st4sd/nanopore-adsorption-experiment/blob/a3fbb2c02994eaa914379c462828eed1f2c9a5e8/bin/write_adsorption_to_database.py#L109-L126",
+        "uncertainty": "equilibrate.py defaults to uSD and offers SD,SE,uSD,uSE; final archive per-file override not observed. Preserve reported mean_error, not asserted SEM or confidence interval.",
+        "uncertainty_proof_url": "https://github.com/st4sd/nanopore-adsorption-experiment/blob/a3fbb2c02994eaa914379c462828eed1f2c9a5e8/bin/equilibrate.py#L45-L51",
+        "limits": "Final authors CSV conversion and all data members were not replayed. Fugacity default remains unresolved; HeliumVoidFraction0 alone was not used to infer convention."
+      }
+    },
+    {
+      "id": "intrinsic_dac_v2",
+      "priority": 2,
+      "origin": "GCMC_Henry_coefficients_plus_ML_heat_capacity_and_derived_cycle_outputs",
+      "dataset_doi": "10.5281/zenodo.16799659",
+      "related_identifier": "10.18434/mds2-3687 in original README",
+      "publication_doi": "10.1039/D5SC06099K",
+      "version": "Zenodo v2,2025-08-11; code0.0.3; README internally says1.0",
+      "primary_url": "https://zenodo.org/records/16799659",
+      "download_status": "metadata_readme_and_small_code_inspected;3.45GB_data_NOT_downloaded",
+      "file_manifest": [
+        {
+          "key": "DAC_data.tar.gz",
+          "bytes": 3452732299,
+          "checksum": "md5:a2520f520140c60f8a4663d5b403966c",
+          "url": "https://zenodo.org/api/records/16799659/files/DAC_data.tar.gz/content"
+        },
+        {
+          "key": "README.txt",
+          "bytes": 3459,
+          "checksum": "md5:892ac1246bb6d92e6b68eaff828fda86",
+          "url": "https://zenodo.org/api/records/16799659/files/README.txt/content"
+        },
+        {
+          "key": "IntrinsicDACCycle-0.0.3.tar.gz",
+          "bytes": 172915,
+          "checksum": "md5:ccdc6ec13aa1fbf78f29348a941bafd2",
+          "url": "https://zenodo.org/api/records/16799659/files/IntrinsicDACCycle-0.0.3.tar.gz/content"
+        }
+      ],
+      "paper_reported_structures": 11660,
+      "observed_unique_structure_count": null,
+      "schema_from_verified_readme": {
+        "N2_Henry_reference_T_K": 300,
+        "CO2_Henry_reference_T_K": 350,
+        "N2_atmosphere_check_pressure_Pa": 101325,
+        "CO2_saturation_reference_T_K": 200,
+        "beta_units": "mol/kJ",
+        "Kcoeff_units": "mmol/(kg Pa)",
+        "heat_capacity": "CV_predictions; ML-predicted dry-framework property, not calorimetric data",
+        "cycle_outputs": [
+          "SinglePath_Intrinsic_Cycle",
+          "Optimized_Intrinsic_Cycle"
+        ]
+      },
+      "license": {
+        "Zenodo_data": "CC-BY-4.0",
+        "code": "NIST Software Licensing Statement; retain notice/attribution"
+      },
+      "readme_original_sha256": "abcb00c1de7063dbd7b093e36c695a54b64bbe4ce44991708bce7521628a42c1",
+      "code_sample_sha256": "9aecb6f3e3bbc82d665ce2e9e49fa46f9604b5b4369ef13e25995945998f5041",
+      "limitations": [
+        "Not11660independently measured multi-temperature isotherm series.",
+        "Temperature dependence is generated from Henry expansions/interpolation/extrapolation; do not use the same constructed function as independent held-out truth.",
+        "PredictedCv shares provenance with Moosavi2022 predictor.",
+        "Need identify exactmaterial IDs, dry mass basis and predicteduncertainty before pairingwithCRAFTED."
+      ],
+      "recommended_use": "Largest relevant thermophysical/property context for realistic C(T), Henry slopes and uncertainty; secondary modeling benchmark, separate from experimental and direct multi-T GCMC layers."
+    },
+    {
+      "id": "mofxdb_dc8a0295db",
+      "priority": 4,
+      "origin": "computational_adsorption_aggregator",
+      "publication_doi": "10.1021/acs.jced.2c00583",
+      "version": "dc8a0295db",
+      "primary_url": "https://mof.tech.northwestern.edu/",
+      "api_documentation": "https://mof.tech.northwestern.edu/api",
+      "databases_endpoint": "https://mof.tech.northwestern.edu/databases.json",
+      "observed_database_counts": [
+        {
+          "id": 5,
+          "name": "CoREMOF 2014",
+          "mofs": 4764
+        },
+        {
+          "id": 4,
+          "name": "CoREMOF 2019",
+          "mofs": 12020
+        },
+        {
+          "id": 1,
+          "name": "CSD",
+          "mofs": 0
+        },
+        {
+          "id": 3,
+          "name": "hMOF",
+          "mofs": 137953
+        },
+        {
+          "id": 6,
+          "name": "IZA",
+          "mofs": 216
+        },
+        {
+          "id": 9,
+          "name": "PCOD-syn",
+          "mofs": 70
+        },
+        {
+          "id": 2,
+          "name": "Tobacco",
+          "mofs": 13511
+        }
+      ],
+      "observed_total_structure_records": 168534,
+      "count_scope": "Records summed across constituent databases; not canonical distinctstructures, not multi-temperature CO2 series.",
+      "sample_url": "https://mof.tech.northwestern.edu/mofs.json?name=hMOF-0",
+      "sample_name": "hMOF-0",
+      "sample_material_id": 15339,
+      "sample_CO2_temperature_K": [
+        298
+      ],
+      "sample_CO2_points": 5,
+      "sample_category": "exp",
+      "sample_simulation_evidence": "simin contains SimulationType MonteCarlo; do not classify experimental from category field",
+      "schema": "NIST-compatible adsorbates/isotherm_data plus simulation inputs,forcefields,heats,mofid/mofkey,mofdb_version",
+      "license": "No explicit overarching data license verified on inspected API/front/archiverepo pages; retain constituent-source licensing and do not assume image-attribution license applies todata.",
+      "download_status": "database-count manifest andone27.5KBstructure JSON inspected; no bulkdownload",
+      "recommended_use": "Broad structural/forcefield catalog; audit per-gas temperaturecoverage before selecting an actual multi-temperature expansion."
+    },
+    {
+      "id": "tamof1_exp_13126536",
+      "priority": 3,
+      "origin": "experimental_author_instrument_export",
+      "concept_record": "13126535 resolves to concrete13126536",
+      "dataset_doi": "10.5281/zenodo.13126536",
+      "publication_doi": "10.1038/s41467-025-58426-w",
+      "primary_url": "https://zenodo.org/records/13126536",
+      "version": "published2024-07-29; concreteimmutableversionrecord",
+      "download_status": "CO2 workbook downloaded andMD5verified",
+      "download": {
+        "record_id": 13126536,
+        "doi": "10.5281/zenodo.13126536",
+        "source_url": "https://zenodo.org/api/records/13126536/files/figure2a-c.TAMOF-CO2.xlsx/content",
+        "filename": "figure2a-c.TAMOF-CO2.xlsx",
+        "bytes": 62404,
+        "md5": "a63af6cef0abc80e10b3456b1ec2c0bd",
+        "sha256": "eaef8aceda253904ec7b7a5fc2bc473627d0850cdc03acacf45fed7f21d7982c",
+        "accessed": "2026-10-07",
+        "license": {
+          "id": "cc-by-4.0"
+        },
+        "local_file": null
+      },
+      "license": "CC-BY-4.0",
+      "observed_counts": {
+        "material_families": 1,
+        "worksheets": 6,
+        "unique_analysis_temperatures": 5,
+        "acquisition_rows_including_desorption": 158,
+        "adsorption_prefix_points": 104
+      },
+      "analysis_temperatures_C": [
+        20,
+        25,
+        25,
+        30,
+        50,
+        80
+      ],
+      "analysis_temperatures_K": [
+        293.15,
+        298.15,
+        298.15,
+        303.15,
+        323.15,
+        353.15
+      ],
+      "schema": {
+        "analysis_temperature_cell": "B24 except30C sheetB23; use AnalysisTemperature(Celsius), not instrument effective-cell field",
+        "data_header_row": "84 except30C sheet83",
+        "equilibrium_pressure_column": "D Peq; profile header explicitlyTargetPoints(bar)",
+        "uptake_column": "O mmol/g =Nexc/g*1000, instrument-reported excess quantity",
+        "mode": "Adsorption-Desorption; split branch at measuredmaximumpressure preserving raw order",
+        "sample_name": "instrument names TAMOF-3/TAMOF3; authordataset/paper assignthisworkbook toTAMOF-1; retain rawsample labels"
+      },
+      "limitations": [
+        "One authorstudy/material, not six independent materials;25C includesrepeat acquisition.",
+        "Only4or5ascending-branch points<=1bar ineachsheet, so it fails old>=6point lowpressuregate; do not force intothat unchangedcohort.",
+        "Approximately0.022–10.52bar measuredsupport;pressure/fugacity andexcess/absolute need explicit treatment.",
+        "Not a directheat measurement."
+      ],
+      "recommended_use": "Independent author-export experimental multitemperature case under a separately declared broader pressurewindow;use source/cell-level provenance,not digitization."
+    },
+    {
+      "id": "diffusion_mof_screening_13948294",
+      "priority": 6,
+      "origin": "simulation_and_process_optimization",
+      "dataset_doi": "10.5281/zenodo.13948294",
+      "primary_url": "https://zenodo.org/records/13948294",
+      "publication_date": "2024-10-17",
+      "metadata_claimed_process_ranked_structures": 982,
+      "parent_structure_pool": 10143,
+      "file_manifest": [
+        {
+          "key": "Diffusion-MOF-Screening.zip",
+          "bytes": 1033623370,
+          "checksum": "md5:ae61125650e2af124a65b619f7f82baa",
+          "url": "https://zenodo.org/api/records/13948294/files/Diffusion-MOF-Screening.zip/content"
+        }
+      ],
+      "license": "CDLA-Sharing-1.0",
+      "download_status": "metadataonly;1.033GBarchiveNOTdownloaded",
+      "temperature_series_coverage": null,
+      "recommended_use": "Possible transport/process benchmark later; no claimedmulti-Tcount untilREADME/schema inspected;mayoverlapCoREsourceframeworks."
+    },
+    {
+      "id": "moosavi_heat_capacity_2022",
+      "priority": 5,
+      "origin": "DFT_and_ML_property_database_with_separate_experimental_component",
+      "publication_doi": "10.1038/s41563-022-01374-3",
+      "computational_dataset_doi": "10.24435/materialscloud:p1-2y",
+      "experimental_record_url": "https://zenodo.org/records/7215247",
+      "primary_url": "https://archive.materialscloud.org/records/7p3z3-t3q91",
+      "version": "MaterialsCloud2022.53 v1,2022-04-13;experimentalELNrecord2022-10-13",
+      "metadata_files": [
+        {
+          "name": "database_heat_capacity.zip",
+          "size_display": "8.6MiB",
+          "md5": "7f3a5a9959420b91bd7ad76e6b539db2"
+        },
+        {
+          "name": "files_description.md",
+          "bytes": 647,
+          "md5": "034b6bacc2c1dafaa5da5f9a593361e5"
+        },
+        {
+          "name": "Cp_Zenodo_upload.zip",
+          "size_display": "22.2MB",
+          "md5": "1e8ad672d5e49bc4e7232a7f51be4506"
+        }
+      ],
+      "license": "Not verified in this pass;check componentmetadata before redistribution",
+      "counts": "Not asserted;manifestonly inspected",
+      "download_status": "primarymetadataonly;dataarchiveNOTdownloaded",
+      "recommended_use": "Higher-value future expansion of C(T) evidence than adding unrelatedisotherms;keepexperimentalcalorimetry,DFTandMLpredictions distinct. NotindependentofIntrinsicDACCVpredictor."
+    }
+  ],
+  "downloaded_large_archive_only": "CRAFTED55,142,744bytes;IntrinsicDAC3.45GBanddiffusion1.03GBnotdownloaded",
+  "count_policy": "Separate origin,frameworkidentity,modelvariant,gas,temperature,curve andpoint. No simulateddataset is added to an experimental-material count.",
+  "raw_gate": "Archivecounts verified; bulk numerical completeness and source-data quality remain for parser audit."
+}

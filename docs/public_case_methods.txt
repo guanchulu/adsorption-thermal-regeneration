@@ -1,0 +1,15 @@
+METHODS
+Use Santori and Luberti (2016), Table8 and Eq29 text, printed p8/PDF p9. The two DSL capacities are3.573 and1.789mol/kg, b0 values1.681e-8 and3.812e-9kPa^-1, and binding-enthalpy magnitudes35.00 and49.26kJ/mol. Source dry C=.858kJ/kg/K is an assumption. Convert b0 to bar^-1 by multiplying100, then s_j=-R ln(b0_j f0), f0=1bar; Q=5.362mol/kg. Our path:298K,.15bar to.10bar, then fixed-fugacity heating to423K. Retained heat uses existing NIST CO2 cp, not the source constant-cp compressor equation. Dry heat is counted once.
+
+DOMAIN
+The298-423K window is a model application domain, not an experimental validity interval. Source model calculations extend to500K; underlying equilibrium abstract reports303/323K. The2016 table labels generic13X; underlying reference reports13X-Ca; commercial grade/cation identity is not independently resolved. No kinetics, moisture, competition, hardware/void-gas heat, work or heat recovery.
+
+RESULTS
+B50kJ/kg: full release.825188mol/kg at317.06375K; reduced target.845011mol/kg at317.80155K needs51.53386kJ/kg (+3.0677%).
+B100: full1.459987mol/kg at340.38042K; reduced1.495859mol/kg needs102.88213kJ/kg (+2.8821%).
+Same-resource broader-family bounds at B25/50/100: [.865382,.868818], [1.330991,1.345991], [2.204652,2.259324]mol/kg. Fixed material:[.491925,.825188,1.459987]. Broader-family freedom is not a realizable gain claim.
+
+REPRODUCE from latex_v5
+uv run --project .. --frozen python code/public_case_run.py
+uv run --project .. --frozen python code/fig_public_case_v5.py
+uv run --project .. --frozen pytest -q code/public_case_tests.py

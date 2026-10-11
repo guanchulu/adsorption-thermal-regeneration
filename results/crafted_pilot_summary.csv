@@ -1,0 +1,4 @@
+gas,force_field,charge,model,groups,structure_ids,median_uptake_nrmse,p90_uptake_nrmse,median_heat_mae_kj_mol
+CO2,DREIDING,DDEC,independent_site_dictionary,99,99,0.011189301369674075,0.03309422373819976,5.393719837897132
+CO2,DREIDING,DDEC,fugacitywise_inverse_temperature,99,99,0.00952468074964262,0.05711086247770714,
+CO2,DREIDING,DDEC,thermal_langmuir,99,99,0.003713399495720676,0.023395304118038706,1.740929902138343

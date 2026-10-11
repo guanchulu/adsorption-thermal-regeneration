@@ -1,0 +1,179 @@
+{
+  "status": "PASS",
+  "path_cases": 54,
+  "symmetry_cases": 18,
+  "quadrature": "96-node Gauss Legendre independently checked against adaptive quad",
+  "metrics": [
+    {
+      "metric": "thermal_loading_ratio",
+      "minimum": 0.04215101656194685,
+      "median": 0.1686040662477874,
+      "maximum": 0.6744162649911496
+    },
+    {
+      "metric": "bracket_gap_fraction",
+      "minimum": 1.687215244183804e-07,
+      "median": 0.029866338119131197,
+      "maximum": 0.15515261067752395
+    },
+    {
+      "metric": "witness_gap_fraction",
+      "minimum": 4.725150626327945e-08,
+      "median": 0.010593977314207026,
+      "maximum": 0.072589219536762
+    },
+    {
+      "metric": "upper_path_overrun_fraction",
+      "minimum": 0.0057022302087892385,
+      "median": 0.02443185663133951,
+      "maximum": 0.12613311324423648
+    },
+    {
+      "metric": "witness_loading_budget_fraction",
+      "minimum": 0.005608109705495697,
+      "median": 0.02299846203955307,
+      "maximum": 0.09467824562207727
+    },
+    {
+      "metric": "lower_slack_fraction",
+      "minimum": 0.011351905494551007,
+      "median": 0.04226556833031192,
+      "maximum": 0.13933644915956966
+    },
+    {
+      "metric": "witness_endpoint_asymmetry",
+      "minimum": 7.691629786234833e-09,
+      "median": 0.008723735296645871,
+      "maximum": 0.06315959479643868
+    },
+    {
+      "metric": "adaptive_max_error",
+      "minimum": 0.0,
+      "median": 0.0,
+      "maximum": 2.842170943040401e-14
+    }
+  ],
+  "symmetry_metrics": [
+    {
+      "metric": "heat_saved",
+      "minimum": 0.00612978474075021,
+      "median": 0.061591304583060946,
+      "maximum": 0.6439634948728354
+    },
+    {
+      "metric": "fraction_saved",
+      "minimum": 3.581845356781521e-05,
+      "median": 0.0005468554235976697,
+      "maximum": 0.007818221201107645
+    },
+    {
+      "metric": "analytic_center_derivative",
+      "minimum": 4.474943777751151,
+      "median": 10.763025475179496,
+      "maximum": 32.15616077072664
+    },
+    {
+      "metric": "derivative_error",
+      "minimum": 2.675477617231081e-10,
+      "median": 4.8885331338510696e-09,
+      "maximum": 1.8458341344285145e-07
+    }
+  ],
+  "representative_Q4_C1_B100": [
+    {
+      "adsorption_K": 298.0,
+      "fa_bar": 0.15,
+      "fd_bar": 0.1,
+      "capacity": 4.0,
+      "dry_cp": 1.0,
+      "budget": 100.0,
+      "temperature_cap": 423.0,
+      "cluster": 1,
+      "cp_g_ceiling": 0.04215101656194685,
+      "thermal_loading_ratio": 0.1686040662477874,
+      "lower_release": 0.4353810371896741,
+      "upper_release": 0.46002419786209203,
+      "lower_T": 338.0895003931095,
+      "lower_E": 30.519959694302297,
+      "lower_s": 0.07888475827321013,
+      "lower_path_heat": 95.94175616424641,
+      "upper_T": 344.3893145845266,
+      "upper_E": 29.13470946997068,
+      "upper_s": 0.07372368563832489,
+      "upper_design_path_heat": 103.1245018426065,
+      "upper_design_loading": 3.1245018426064886,
+      "witness_release": 0.44973932350365287,
+      "witness_T": 341.711298250179,
+      "witness_E": 29.69604928513695,
+      "witness_s": 0.07623218984202786,
+      "witness_path_heat": 99.99999989999941,
+      "witness_dry": 43.71129825017903,
+      "witness_binding": 53.421924464914504,
+      "witness_loading": 2.86677718490589,
+      "witness_theta_a": 0.7149475864456492,
+      "witness_theta_d": 0.2652082629419963,
+      "successful_starts": 4,
+      "total_starts": 4,
+      "adaptive_max_error": 0.0,
+      "adaptive_reported_error": 3.4688938861454515e-14,
+      "bracket_gap_fraction": 0.053569270457824,
+      "witness_gap_fraction": 0.02235724643668069,
+      "upper_path_overrun_fraction": 0.031245018426065085,
+      "witness_loading_budget_fraction": 0.0286677718490589,
+      "lower_slack_fraction": 0.04058243835753583,
+      "witness_endpoint_asymmetry": 0.01984415061235456
+    },
+    {
+      "adsorption_K": 298.0,
+      "fa_bar": 0.15,
+      "fd_bar": 0.1,
+      "capacity": 4.0,
+      "dry_cp": 1.0,
+      "budget": 100.0,
+      "temperature_cap": 423.0,
+      "cluster": 4,
+      "cp_g_ceiling": 0.04215101656194685,
+      "thermal_loading_ratio": 0.1686040662477874,
+      "lower_release": 0.8259826594276827,
+      "upper_release": 0.8514111940269034,
+      "lower_T": 338.0895003931095,
+      "lower_E": 16.087276839321927,
+      "lower_s": 0.03332437676526876,
+      "lower_path_heat": 95.19105410303139,
+      "upper_T": 344.3893145845266,
+      "upper_E": 15.741713813366717,
+      "upper_s": 0.031807658920255694,
+      "upper_design_path_heat": 102.27460111669961,
+      "upper_design_loading": 2.274601116699624,
+      "witness_release": 0.8438284120267249,
+      "witness_T": 342.4417493504554,
+      "witness_E": 15.832403465557562,
+      "witness_s": 0.03231524259632063,
+      "witness_path_heat": 99.99999990002452,
+      "witness_dry": 44.44174935045538,
+      "witness_binding": 53.43932749963141,
+      "witness_loading": 2.1189230499377225,
+      "witness_theta_a": 0.9186942278250714,
+      "witness_theta_d": 0.07486581579834654,
+      "successful_starts": 4,
+      "total_starts": 4,
+      "adaptive_max_error": 0.0,
+      "adaptive_reported_error": 8.40792095013516e-14,
+      "bracket_gap_fraction": 0.029866338119131197,
+      "witness_gap_fraction": 0.008906133785150705,
+      "upper_path_overrun_fraction": 0.02274601116699615,
+      "witness_loading_budget_fraction": 0.021189230499377223,
+      "lower_slack_fraction": 0.04808945896968608,
+      "witness_endpoint_asymmetry": 0.006439956376582082
+    }
+  ],
+  "scope": "Reduced-model sharp upper; constructive path lower and feasible search witness, not global path optimum",
+  "sha256": {
+    "code/path_model.py": "c378fc935e7fe1af629592dec8b239736ee908ee0fa26db3bb5ff2c6f61f0a9d",
+    "code/path_design.py": "44a0a62dd7debcad4e16c6b46adb66644726730cd01a6780943e1e4d99253619",
+    "code/run_path_study.py": "d9cb9ea9bf4d74c7d22d4c92fac5fdda022760e5c7bfe69eafe25c52d2ccdf04",
+    "code/audit_path.py": "63d65dce91e4bb104fb49a8d8482fab7ce0c84aa3aaaf0f662f2a05cff72ab52",
+    "results/path_brackets.csv": "c9d1876745544d703157860a23874fb2ca81753ec6351a3dfe73b16ee20c0dc1",
+    "results/symmetry_breaking.csv": "bb1d78f213bb1b25c74f48597cd6666887159b463beb4f5a5899192729a886d9"
+  }
+}

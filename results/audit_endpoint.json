@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scalar_cost_checks": 1200,
+  "path_cases": 54,
+  "max_support_excess": -1.1486152742674444e-09,
+  "max_relative_cost_discrepancy": 2.086995647179981e-08,
+  "feasible_random_path_samples": 22537,
+  "max_adaptive_heat_error": 2.842170943040401e-14,
+  "gap_min_median_max": [
+    4.7251506214610216e-08,
+    0.004557397186067672,
+    0.027872282736825175
+  ],
+  "scope": "Analytical convex/bin inequalities evaluated in ordinary floating point, 1e-8 guard; not formal interval arithmetic",
+  "sha256": {
+    "code/endpoint_bounds.py": "17235a94cebe2a7afa8d477b3c0895841379f1ca0b61f58b9cd851d8417ba1ab",
+    "code/run_endpoint_study.py": "a22646ee27e86dd73c184654b749f1717bd6ccc238c066e7de1952e923159fc6",
+    "code/audit_endpoint.py": "abecd1b1423b9adad6c5b4ad34534e353ecb85723b02875d38f41e740e329eec",
+    "results/endpoint_brackets.csv": "3e41e8160468dfaf94b36444033567cb5bf0bf6a52f0b27fa88e95982bf0cd9a"
+  }
+}

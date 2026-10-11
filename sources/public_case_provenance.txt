@@ -1,0 +1,44 @@
+PUBLIC-PARAMETER CASE PROVENANCE — 2026-10-10
+
+Case label: Santori–Luberti (2016) published zeolite-13X model.
+Status: literature-parameter illustration under this manuscript's pressure-first, fixed-fugacity heating path. Not experimental validation of regeneration heat; not reproduction of the source's compressor cycle.
+
+Primary parameter source
+Giulio Santori and Mauro Luberti. Thermodynamics of thermally-driven adsorption compression. Sustainable Materials and Technologies 10 (2016) 1–9.
+DOI: https://doi.org/10.1016/j.susmat.2016.09.001
+Author manuscript: https://www.pure.ed.ac.uk/ws/portalfiles/portal/27896214/Adsorption_Compression_Low_Grade_Heat.pdf
+Source PDF is available at the author-manuscript URL above; publisher/article PDFs are not redistributed here.
+SHA256: 1792c959218c30b2db61030c1e3b7b5a9e46ed6da0d4eb44c44157deff738074
+Peer-reviewed author manuscript with repository cover, 18 PDF pages. Printed p8 is PDF p9 (zero-based index8).
+
+Table8 (printed p8/PDF p9), pure-CO2 dual-site Langmuir parameters:
+q_s1 = 3.573 mol/kg dry adsorbent; q_s2 = 1.789 mol/kg.
+b_01 = 1.681e-8 kPa^-1; b_02 = 3.812e-9 kPa^-1.
+DeltaH_1 = -35.00 kJ/mol; DeltaH_2 = -49.26 kJ/mol.
+Source equation29 accompanying text, same page:
+"the specific heat capacity of the adsorbent assumed 0.858 kJ kg-1 K-1"
+This is an assumed dry-solid heat capacity in the published model, not a measured result for the same sample. No covariance or confidence interval is invented.
+
+Units and mapping
+Q = q_s1+q_s2 = 5.362 mol/kg.
+b_0,j(bar^-1) = 100 * b_0,j(kPa^-1).
+E_j = -DeltaH_j >=0, in kJ/mol.
+s_j = -R ln[b_0,j(bar^-1)*f0], f0=1bar, R=0.008314462618 kJ/mol/K.
+mu_j=q_sj/Q, independent-site cluster m=1.
+q(T,p)=sum_j q_sj b_0,j p exp(E_j/(R T))/(1+b_0,j p exp(E_j/(R T))).
+Constant energies and capacities put the pure-component model in the manuscript family.
+
+Temperature and identity boundary
+The 2016 source labels the parameterization zeolite13X, citing reference42, and applies its multigas compressor model from298 to500K (Fig4–6). This is an applied range, not an experimental validation range.
+Underlying reference42: Filipe V. S. Lopes, Carlos A. Grande, Ana M. Ribeiro, Vitor J. P. Vilar, Jose M. Loureiro and Alirio E. Rodrigues. Effect of Ion Exchange on the Adsorption of Steam Methane Reforming Off-Gases on Zeolite13X. Journal of Chemical & Engineering Data55 (2010)184–195. https://doi.org/10.1021/je900303y.
+The official ACS abstract reports equilibrium measurements on ion-exchanged13X-Ca at303 and323K,0–7bar. The complete original table was not independently retrieved from a primary host. The case retains the2016 source's model label and does not assert a resolved commercial grade or cation identity.
+Our298–423K window includes298K below those measurement temperatures and >323K above them. Even303–323K is model interpolation, not new validation. Markers indicate303/323K, never a validated continuous interval.
+
+New calculation assumptions
+Adsorb at298K, ideal-gas fugacity0.15bar; isothermally depressurize to0.10bar; heat at fixed fugacity to<=423K. Single CO2; rigid solid; no competitive adsorption, water, void-gas inventory, vessel heat capacity, recovery, pressure work or rate limitation.
+Dry C=.858kJ/kg/K comes from the same published model. The gas/adsorbate closure uses the manuscript's NIST Shomate CO2 heat capacity298–1200K, rather than the source's constant-cp compressor approximation. We reuse equilibrium and dry-C parameters, not the source cycle heat equation.
+Gas source: https://webbook.nist.gov/cgi/cbook.cgi?ID=C124389&Units=SI&Mask=1#Thermo-Gas
+
+Checks
+kPa-form uptake equals entropy-form uptake; path heat equals bed enthalpy change plus discharged-gas enthalpy; Gaussian retained heat equals adaptive quadrature; full heat inversion meets budget while reduced inversion exceeds it.
+Same-resource bounds apply to all admissible site distributions at Q5.362 and C.858, not this fixed DSL. Differences from its performance are conditional model-space freedom, not measured or realizable gains.

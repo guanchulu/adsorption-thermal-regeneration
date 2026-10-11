@@ -1,0 +1,14 @@
+{
+  "record_id": 10120180,
+  "doi": "10.5281/zenodo.10120180",
+  "source_url": "https://zenodo.org/api/records/10120180/files/CRAFTED-2.0.1.tar.xz/content",
+  "filename": "CRAFTED-2.0.1.tar.xz",
+  "bytes": 55142744,
+  "md5": "e11e4f84cdd484db7811bc758faaed37",
+  "sha256": "f29f7b3d6b7d6c51fd113138bc4a811c448d4dcce66ed37fddbfa4141a238dde",
+  "accessed": "2026-10-07",
+  "license": {
+    "id": "cdla-sharing-1.0"
+  },
+  "local_file": "data/crafted_raw/CRAFTED-2.0.1.tar.xz"
+}

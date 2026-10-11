@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Please cite the versioned GitHub release when using these data and calculations."
+type: dataset
+title: "Data and code for Thermodynamic bounds on gas release under finite regeneration heat"
+version: 1.0.0
+date-released: 2026-10-11
+url: "https://github.com/guanchulu/adsorption-thermal-regeneration/releases/tag/v1.0.0"
+repository-code: "https://github.com/guanchulu/adsorption-thermal-regeneration"
+authors:
+  - family-names: Lu
+    given-names: Guanchu
+  - family-names: Zhao
+    given-names: Peng
+  - family-names: Yu
+    given-names: Hao
+  - family-names: Fan
+    given-names: Xianfeng
+keywords:
+  - adsorption
+  - thermodynamics
+  - regeneration heat
+  - convex bounds
+

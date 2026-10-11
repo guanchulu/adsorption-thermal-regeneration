@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "groups": 122,
+  "verified_comparison_points": 2522,
+  "maximum_normalized_response_reconstruction_error": 0.0,
+  "maximum_span_pair_rule_verified": true,
+  "original_source_point_identity_verified": true,
+  "source_sha256": {
+    "..\\data\\multitemperature_curves.parquet": "bb12e7320b3cc02a11ee17be5e702adcd89b788902562715645c014d92b8216a",
+    "..\\data\\multitemperature_points.parquet": "04cd769cb440fe867b430a806c08e3ef4099dc4dd7cf684799b77ec6c2873824"
+  },
+  "output_sha256": {
+    "data\\experimental_pairs.parquet": "7c6291fb9fc25a391cdac8a0f53bf7c054450697c3e428160a65b789a6cdc044",
+    "data\\experimental_pair_points.parquet": "6c74b4379d6296b2e2d6320f00f360b2493921a8f210062ae802609e28b0efd0",
+    "results\\experimental_response_points.parquet": "2ccb74f605e63cc8414d3a739d6ea9b785a5478a4a20196cc23187d909d60a98"
+  }
+}

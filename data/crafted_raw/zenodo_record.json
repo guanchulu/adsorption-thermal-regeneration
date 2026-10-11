@@ -1,0 +1,189 @@
+{
+  "created": "2023-11-13T21:15:48.293565+00:00",
+  "modified": "2023-11-13T21:15:48.673058+00:00",
+  "id": 10120180,
+  "conceptrecid": "7106173",
+  "doi": "10.5281/zenodo.10120180",
+  "conceptdoi": "10.5281/zenodo.7106173",
+  "doi_url": "https://doi.org/10.5281/zenodo.10120180",
+  "metadata": {
+    "title": "CRAFTED: An exploratory database of simulated adsorption isotherms of nanoporous materials",
+    "doi": "10.5281/zenodo.10120180",
+    "publication_date": "2023-11-13",
+    "description": "<p><strong>Overview</strong></p><p>The files in this repository compose the&nbsp;<strong>C</strong>harge-dependent,&nbsp;<strong>R</strong>eproducible,&nbsp;<strong>A</strong>ccessible,&nbsp;<strong>F</strong>orcefield-dependent, and&nbsp;<strong>T</strong>emperature-dependent&nbsp;<strong>E</strong>xploratory&nbsp;<strong>D</strong>atabase (<strong>CRAFTED</strong>) of adsorption isotherms. This dataset contains the simulation of CO2 and N2 adsorption isotherms on 690 metal-organic frameworks taken from the CoRE-MOF-2014 database and 667 covalent organic frameworks taken from the CURATED-COFs database. The simulations were performed with two force fields (UFF and DREIDING), six partial charge schemes (no charges, Qeq, EQeq, DDEC, MPNN, and PACMOF), and three temperatures (273, 298, 323 K).</p><p><strong>Contents</strong></p><ul><li>CIF_FILES/&nbsp;contains 6 folders (NEUTRAL, DDEC, EQeq, Qeq, MPNN, and PACMOF), each one with 1357 CIF files;</li><li>FORCEFIELDS/&nbsp;contains 2 folders (UFF and DREIDING) with the definition of the forcefields;</li><li>INPUT_FILES/&nbsp;contains 97,704 input files for the GCMC simulations;</li><li>ISOTHERM_FILES/&nbsp;contains 97,704 adsorption isotherms resulting from the GCMC simulation;</li><li>ENTHALPY_FILES/&nbsp;contains 97,704 enthalpies of adsorption from the isotherms;</li><li>RAC_DBSCAN/&nbsp;contains the RAC and geometrical descriptors to perform the t-NSE + DBSCAN analysis;</li></ul><p><strong>Licenses</strong></p><p>The 690 MOF-related CIF files in the&nbsp;DDEC&nbsp;folder were downloaded from&nbsp;<a href=\"https://doi.org/10.5281/zenodo.3986573\">CoRE-MOF-2014</a>&nbsp;and are licensed under the terms of the Creative Commons Attribution 4.0 International license (<a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\">CC-BY-4.0</a>). The 667 COF-related CIF files in the&nbsp;NEUTRAL&nbsp;folder were downloaded from&nbsp;<a href=\"https://github.com/danieleongari/CURATED-COFs\">CURATED-COFs</a>&nbsp;and are licensed under the terms of the MIT license (<a href=\"https://github.com/danieleongari/CURATED-COFs/blob/master/LICENSE\">MIT</a>).</p><blockquote><p>Dalar Nazarian, Jeffrey S. Camp, &amp; David S. Sholl. (2016). Computation-Ready Experimental Metal-Organic Framework (CoRE MOF) 2014 DDEC Database [Data set]. Zenodo.&nbsp;<a href=\"https://doi.org/10.5281/zenodo.3986573\">https://doi.org/10.5281/zenodo.3986573</a></p><p>Ongari, Daniele, et al. \"Building a consistent and reproducible database for adsorption evaluation in covalent–organic frameworks.\" ACS Central Science 5.10 (2019): 1663-1675.&nbsp;<a href=\"https://doi.org/10.1021/acscentsci.9b00619\">https://doi.org/10.1021/acscentsci.9b00619</a></p><p>Ongari, Daniele, Leopold Talirz, and Berend Smit. \"Too many materials and too many applications: An experimental problem waiting for a computational solution.\" ACS Central Science 6.11 (2020): 1890-1900.&nbsp;<a href=\"https://doi.org/10.1021/acscentsci.0c00988\">https://doi.org/10.1021/acscentsci.0c00988</a></p></blockquote><p>The&nbsp;CO2.def&nbsp;and&nbsp;N2.def&nbsp;forcefield files were downloaded from&nbsp;<a href=\"https://github.com/iRASPA/RASPA2/tree/master/molecules/ExampleDefinitions\">RASPA</a>&nbsp;and are licensed under the terms of the&nbsp;<a href=\"https://github.com/iRASPA/RASPA2/blob/master/COPYING\">MIT</a>&nbsp;license.</p><blockquote><p>Dubbeldam, David, et al. \"RASPA: molecular simulation software for adsorption and diffusion in flexible nanoporous materials.\" Molecular Simulation 42.2 (2016): 81-101.&nbsp;<a href=\"https://doi.org/10.1080/08927022.2015.1010082\">https://doi.org/10.1080/08927022.2015.1010082</a></p></blockquote><p>The remaining MOF-related CIF files in the&nbsp;PACMOF,&nbsp;MPNN,&nbsp;Qeq,&nbsp;EQeq&nbsp;and&nbsp;NEUTRAL&nbsp;folders were derived from those in the&nbsp;DDEC&nbsp;folder and are licensed under the terms of the Creative Commons Attribution 4.0 International license (<a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\">CC-BY-4.0</a>) from the CoRE-MOF-2014 subset. The remaining COF-related CIF files in the&nbsp;PACMOF,&nbsp;MPNN,&nbsp;Qeq,&nbsp;EQeq&nbsp;and&nbsp;DDEC&nbsp;folders were derived from those in the&nbsp;NEUTRAL&nbsp;folder and are licensed under the terms of the MIT license (<a href=\"https://github.com/danieleongari/CURATED-COFs/blob/master/LICENSE\">MIT</a>) from the CURATED-COFs subset.</p><p>All remaining files were created by us, and are licensed under the terms of the&nbsp;<a href=\"https://cdla.dev/sharing-1-0/\">CDLA-Sharing-1.0</a>&nbsp;license.</p><p><strong>Software requirements</strong></p><p>In order to create a Python environment capable of running the Jupyter notebooks, please install&nbsp;<a href=\"https://docs.conda.io/en/latest/miniconda.html\">conda</a>&nbsp;and execute</p><p>conda env create --file environment.yml</p><p><strong>Usage instructions</strong></p><p>Execute the command below to run JupyterLab in the appropriate Python environment.</p><p>conda run --name crafted jupyter-lab</p><p>&nbsp;</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Lopes Oliveira, Felipe",
+        "affiliation": "IBM Research, UFRJ",
+        "orcid": "0000-0002-2231-4567"
+      },
+      {
+        "name": "Cleeton, Conor",
+        "affiliation": "University of Manchester",
+        "orcid": "0000-0002-9874-087X"
+      },
+      {
+        "name": "Neumann Barros Ferreira, Rodrigo",
+        "affiliation": "IBM Research",
+        "orcid": "0000-0003-4435-0507"
+      },
+      {
+        "name": "Luan, Binquan",
+        "affiliation": "IBM Research",
+        "orcid": "0000-0002-9414-5379"
+      },
+      {
+        "name": "Farmahini, Amir H.",
+        "affiliation": "University of Manchester",
+        "orcid": "0000-0002-6686-8588"
+      },
+      {
+        "name": "Sarkisov, Lev",
+        "affiliation": "University of Manchester",
+        "orcid": "0000-0001-7637-7670"
+      },
+      {
+        "name": "Steiner, Mathias",
+        "affiliation": "IBM Research",
+        "orcid": "0000-0003-1528-9292"
+      }
+    ],
+    "keywords": [
+      "materials",
+      "adsorption",
+      "grand canonical monte carlo",
+      "carbon capture"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.1038/s41597-023-02116-z",
+        "relation": "isDescribedBy",
+        "resource_type": "publication-article",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1039/D3EE00858D",
+        "relation": "isRequiredBy",
+        "resource_type": "publication-article",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/st4sd/nanopore-adsorption-experiment/releases/tag/v1.0.0",
+        "relation": "isCompiledBy",
+        "resource_type": "software",
+        "scheme": "url"
+      }
+    ],
+    "version": "2.0.1",
+    "references": [
+      "Oliveira, Felipe Lopes, et al. \"CRAFTED: An exploratory database of simulated adsorption isotherms of metal-organic frameworks.\" Scientific Data 10.1 (2023): 230. https://doi.org/10.1038/s41597-023-02116-z",
+      "Cleeton, Conor, et al. \"A process-level perspective of the impact of molecular force fields on the computational screening of MOFs for carbon capture.\" Energy & Environmental Science 16.9 (2023): 3899-3918. https://doi.org/10.1039/D3EE00858D",
+      "https://github.com/st4sd/nanopore-adsorption-experiment/releases/tag/v1.0.0"
+    ],
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "journal": {
+      "issue": "1",
+      "pages": "230",
+      "title": "Scientific Data",
+      "volume": "10"
+    },
+    "meeting": {
+      "title": "American Chemical Society",
+      "acronym": "ACS Fall 2023",
+      "dates": "13-17 August 2023",
+      "place": "San Francisco, CA",
+      "url": "https://www.acs.org/meetings/acs-meetings/fall-2023.html",
+      "session": "Chemical informatics (R)evolution: Towards Democratization and Open Science",
+      "session_part": "[CINF] Division of Chemical Information"
+    },
+    "license": {
+      "id": "cdla-sharing-1.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 4,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "7106173"
+          }
+        }
+      ]
+    },
+    "notes": "<p>Created using \"tar -Jcvf CRAFTED-2.0.1.tar.xz CRAFTED-2.0.1/\".</p>"
+  },
+  "title": "CRAFTED: An exploratory database of simulated adsorption isotherms of nanoporous materials",
+  "links": {
+    "self": "https://zenodo.org/api/records/10120180",
+    "self_html": "https://zenodo.org/records/10120180",
+    "preview_html": "https://zenodo.org/records/10120180?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.10120180",
+    "self_doi": "https://doi.org/10.5281/zenodo.10120180",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.10120180",
+    "reserve_doi": "https://zenodo.org/api/records/10120180/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/7106173",
+    "parent_html": "https://zenodo.org/records/7106173",
+    "parent_doi": "https://doi.org/10.5281/zenodo.7106173",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.7106173",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:10120180/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:10120180/sequence/default",
+    "files": "https://zenodo.org/api/records/10120180/files",
+    "media_files": "https://zenodo.org/api/records/10120180/media-files",
+    "archive": "https://zenodo.org/api/records/10120180/files-archive",
+    "archive_media": "https://zenodo.org/api/records/10120180/media-files-archive",
+    "latest": "https://zenodo.org/api/records/10120180/versions/latest",
+    "latest_html": "https://zenodo.org/records/10120180/latest",
+    "versions": "https://zenodo.org/api/records/10120180/versions",
+    "draft": "https://zenodo.org/api/records/10120180/draft",
+    "access_links": "https://zenodo.org/api/records/10120180/access/links",
+    "access_grants": "https://zenodo.org/api/records/10120180/access/grants",
+    "access_users": "https://zenodo.org/api/records/10120180/access/users",
+    "access_request": "https://zenodo.org/api/records/10120180/access/request",
+    "access": "https://zenodo.org/api/records/10120180/access",
+    "communities": "https://zenodo.org/api/records/10120180/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/10120180/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/10120180/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/10120180/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/10120180/quota-increase",
+    "requests": "https://zenodo.org/api/records/10120180/requests"
+  },
+  "updated": "2023-11-13T21:15:48.673058+00:00",
+  "recid": "10120180",
+  "revision": 4,
+  "files": [
+    {
+      "id": "da21b464-faa5-4e77-99fb-4973d760d44b",
+      "key": "CRAFTED-2.0.1.tar.xz",
+      "size": 55142744,
+      "checksum": "md5:e11e4f84cdd484db7811bc758faaed37",
+      "links": {
+        "self": "https://zenodo.org/api/records/10120180/files/CRAFTED-2.0.1.tar.xz/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "407648"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 1656,
+    "unique_downloads": 1287,
+    "views": 6417,
+    "unique_views": 5857,
+    "version_downloads": 432,
+    "version_unique_downloads": 342,
+    "version_unique_views": 1031,
+    "version_views": 1169
+  },
+  "state": "done",
+  "submitted": true
+}

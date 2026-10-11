@@ -1,0 +1,26 @@
+OPERATING-MAP VALIDATION, 2026-10-10
+
+Output: 42 complete setting rows, 35 reference-C budget cells.
+Full final run: 20.843 seconds; exit 0; console stored in operating_map_run.log.
+Unit/integration tests: 3 passed in 1.36 seconds.
+Ruff check and format: passed on code/run_operating_map.py and tests/test_operating_map.py.
+Basedpyright: 0 errors, 0 warnings, 0 notes on those files.
+Programming audit: no violations in either new file.
+Existing scientific modules were not edited.
+
+Numerical export QA:
+All 42 retained witnesses have positive remaining budget slack.
+Minimum B-Hpath = 2.4999430081606988e-08 kJ/kg.
+All rows obey feasible <= refined upper <= reduced upper.
+All active temperature-bound bins have width <=0.05 K.
+Independent adaptive scipy.integrate.quad integration of each retained-gas
+heat term differs from the stored 96-node Gauss-Legendre result by at most
+1.2158007933749104e-10 kJ/kg across 42 cases.
+This quadrature cross-check is internal numerical validation, not experimental
+or detailed-column process validation.
+
+Architectural review:
+The new script owns operating-map orchestration; it reuses original bound,
+witness and heat-path APIs. Frozen output records carry explicit units.
+No new untyped escape hatches or tagged-variant branching were introduced.
+Budget-cell bounds use physical budget monotonicity, never interpolated proof.

@@ -1,0 +1,123 @@
+{
+  "url": "https://mof.tech.northwestern.edu/mofs.json?name=hMOF-0",
+  "source_response_sha256": "a87d8299bed29ba7c7f36595f22b097edb5c7c88f94f23db98719eb3faca209a",
+  "mofdb_version": "dc8a0295db",
+  "name": "hMOF-0",
+  "id": 15339,
+  "keys": [
+    "id",
+    "cif",
+    "lcd",
+    "pld",
+    "url",
+    "name",
+    "pxrd",
+    "heats",
+    "mofid",
+    "mofkey",
+    "hashkey",
+    "database",
+    "elements",
+    "isotherms",
+    "adsorbates",
+    "batch_number",
+    "mofdb_version",
+    "void_fraction",
+    "surface_area_m2g",
+    "surface_area_m2cm3",
+    "pore_size_distribution"
+  ],
+  "isotherms": [
+    {
+      "id": 5105121,
+      "gas": [
+        "CarbonDioxide"
+      ],
+      "temperature_K": 298.0,
+      "units": [
+        "bar",
+        "mol/kg"
+      ],
+      "n_points": 5,
+      "category": "exp",
+      "doi": "10.1039/C2EE23201D",
+      "simulation_type_line": "SimulationType                MonteCarlo"
+    },
+    {
+      "id": 5380726,
+      "gas": [
+        "Nitrogen"
+      ],
+      "temperature_K": 298.0,
+      "units": [
+        "bar",
+        "mol/kg"
+      ],
+      "n_points": 2,
+      "category": "exp",
+      "doi": "10.1039/C2EE23201D",
+      "simulation_type_line": "SimulationType                MonteCarlo"
+    },
+    {
+      "id": 5518378,
+      "gas": [
+        "Methane"
+      ],
+      "temperature_K": 298.0,
+      "units": [
+        "bar",
+        "mol/kg"
+      ],
+      "n_points": 5,
+      "category": "exp",
+      "doi": "10.1039/C2EE23201D",
+      "simulation_type_line": "SimulationType                MonteCarlo"
+    },
+    {
+      "id": 5737339,
+      "gas": [
+        "Methane"
+      ],
+      "temperature_K": 298.0,
+      "units": [
+        "bar",
+        "cm3(STP)/cm3"
+      ],
+      "n_points": 1,
+      "category": "exp",
+      "doi": "10.1038/nchem.1192",
+      "simulation_type_line": "SimulationType                MonteCarlo"
+    },
+    {
+      "id": 6012944,
+      "gas": [
+        "Xenon",
+        "Krypton"
+      ],
+      "temperature_K": 273.0,
+      "units": [
+        "bar",
+        "mol/kg"
+      ],
+      "n_points": 3,
+      "category": "exp",
+      "doi": "10.1039/C2SC01097F",
+      "simulation_type_line": "SimulationType                MonteCarlo"
+    },
+    {
+      "id": 6150830,
+      "gas": [
+        "Hydrogen"
+      ],
+      "temperature_K": 77.0,
+      "units": [
+        "bar",
+        "g/l"
+      ],
+      "n_points": 2,
+      "category": "exp",
+      "doi": "10.1021/acs.jpcc.6b08729",
+      "simulation_type_line": "SimulationType                MonteCarlo"
+    }
+  ]
+}

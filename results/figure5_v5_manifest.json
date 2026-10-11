@@ -1,0 +1,306 @@
+{
+  "source": "CRAFTED2.0.1, DOI 10.5281/zenodo.10120180; GCMC observations",
+  "reference": "CO2 / DREIDING / DDEC / thermal_langmuir",
+  "selection_rule": "Sort ascending by uptake_nrmse then structure_id; one-based rank ceil(p*n), p=0.5 and 0.9. No curve inspection enters selection.",
+  "cohort_structures": 1352,
+  "median_uptake_nrmse": 0.00324275916532774,
+  "median_heat_mae_kj_mol": 1.5917067906391003,
+  "selected": [
+    {
+      "structure_id": "GERNOI",
+      "quantile": 0.5,
+      "rank": 676,
+      "uptake_nrmse": 0.003241736628491024,
+      "heat_mae_kj_mol": 2.776839262057013,
+      "predicted_heat_kj_mol": 29.80926481761257,
+      "raw_rows": 30,
+      "heldout_points": 9
+    },
+    {
+      "structure_id": "REYBAA",
+      "quantile": 0.9,
+      "rank": 1217,
+      "uptake_nrmse": 0.024742429082911722,
+      "heat_mae_kj_mol": 3.223302087732558,
+      "predicted_heat_kj_mol": 38.54608097662145,
+      "raw_rows": 30,
+      "heldout_points": 9
+    }
+  ],
+  "max_refit_stored_discrepancy_mol_kg": 0.0,
+  "interpretation": "Temperature extrapolation 298 to 323 K within training fugacity support; all enthalpy withheld. Not cycle heat validation. Supplied variability is retained without assigning SD/SEM/CI semantics.",
+  "inputs": [
+    {
+      "file": "data\\crafted_points.parquet",
+      "sha256": "defb760efa57643582b7119c0cd4fe4e32b0f8314ac74abe5c0fcccc63110ec7"
+    },
+    {
+      "file": "results\\crafted_reference_metrics.parquet",
+      "sha256": "e8411e273930a10b94eb71aaa314ca6d2bf0e91f32fb7abeca227b8154a63dac"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_000.parquet",
+      "sha256": "3d572df576510447f199d14cc7d81befc234b8b6b8b46f4b7574617aa7ff1d40"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_001.parquet",
+      "sha256": "e6b3f35d113fe915ccb453b0eaa13e2d1baadcff48f191eae0e3843256bbb60b"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_002.parquet",
+      "sha256": "52c508922f40fbcfb11ca6b332abebf1471967b852eeeb1bd31076c8d9c9a51b"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_003.parquet",
+      "sha256": "953a8724bde0d639e64903608ca0b16b5513efad0ab1adfd98de11db2be91b8a"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_004.parquet",
+      "sha256": "835fb9f05b72ea77c274f0b9a9d5e8a6c9dfdd600120c5e4ffdbef516798489d"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_005.parquet",
+      "sha256": "87fbf479b0c31e23801a70b4d4a965e9b4885796d5a0dfde7ebcf7af81b67f0f"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_006.parquet",
+      "sha256": "1a281868388f9d2c964adb80f9e0fb8536a81b253c21aa19bf74eaa969479f43"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_007.parquet",
+      "sha256": "79952af604d972be4a87d28b96528e63fa480536998d0acf7deaa4cb42f28a77"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_008.parquet",
+      "sha256": "ab24f6554b0a92749ac51b01e7c9c5d8bcaa32a92755ca7bf4f4cb0054c5a1a5"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_009.parquet",
+      "sha256": "ba9fc3d9737fdbd9cfc1727b8c1cfa0c6da7c5ca9ad045e7667073c4e7c6652d"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_010.parquet",
+      "sha256": "5a0a5024217b67253462ceff12d859aa2924194dcd326a749164d009f213e7d1"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_011.parquet",
+      "sha256": "dfd847293136607d88c3db7aa396130b2da5dfc754e4021842aa792b98cf85e8"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_012.parquet",
+      "sha256": "6c03212001dc53b5acf0b8365e4768e7a29482c92da874c58db7d8218209254c"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_013.parquet",
+      "sha256": "68f7cd6876088e8744218c9edb467b34df28f06f16c71164c7d752122b8c76e4"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_014.parquet",
+      "sha256": "f9a33880aac4418b1991974a34d5a26f6ebe134b9f982f507f0eac492ae01255"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_015.parquet",
+      "sha256": "8a1b3972e20be519032716bf9122589b1d472c02a6ba6753acdf951df420696a"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_016.parquet",
+      "sha256": "c7e31e86a00b6c28f022aa3bd12276829f2bacfa3a0d0cc57d69c5a21713dc40"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_017.parquet",
+      "sha256": "57945f2b8a22986b114bd13d340ed994a33c2aa75d19599a8c09ab8546b11c40"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_018.parquet",
+      "sha256": "f3ea9200b27dfeb1528f3a2feb77e800304ad0701cdbdf10b3cd66de657e1016"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_019.parquet",
+      "sha256": "26d13fc76f43b0592397f952fb2c399078acf576bd682782ee39d00b4c412be5"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_020.parquet",
+      "sha256": "2d629cbccb59b19aac011b9e6cae4f7c576ec53faeec1913989f96784e7c98b1"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_021.parquet",
+      "sha256": "ebebef9f201178dd30cc5eba5ea9353b8a68c7830d017b27bb49402ba1c888f3"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_022.parquet",
+      "sha256": "8cc574bd3a6851d58d1c9f03e3b831ffaf2a1119705c76c5b86dad2976d8c713"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_023.parquet",
+      "sha256": "990cc9f371603709f3870ac5fc0757df7f2faa5735f661c3a6246bc8d30d8a83"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_024.parquet",
+      "sha256": "5cb5a34b38e6543b1816655803de8064e3baf4125766a1ac36754edc48500c6b"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_025.parquet",
+      "sha256": "6b6fe36ea9bc2c21e500109189894c4325096bb2cbc1f57b51ce05da85193a80"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_026.parquet",
+      "sha256": "d7d8744be026b6e22bdc809c54fac789c9f585e0432318c7220a858888127f93"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_027.parquet",
+      "sha256": "7995c7983c70b596db9ddf1d2682981a5e68a590b16478079560c5e2517de496"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_028.parquet",
+      "sha256": "7f6c8a85d70b3e4c6ede2c677db748692e264187b1462d8679e11aef6601fd40"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_029.parquet",
+      "sha256": "6913bc7b8836e964dcddf3ecc071961fa21a0992005459c889f82d360f9eacf7"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_030.parquet",
+      "sha256": "da97631aff80cce0118adf35878d280f21b7612d9a360ff5a621f4a0f17d3519"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_031.parquet",
+      "sha256": "2930663f6bdadee44cf9e6f961ebd3f94044a0dad6ca0df7cbcf9fa4b64b9a41"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_032.parquet",
+      "sha256": "15f83879070b73aaec5874f56f2bf34a66498748e525e78bcb079b58a0d28626"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_033.parquet",
+      "sha256": "ce4cb36c780b5700b7c10922d9348560b6835991696f002d0cf45f5f93be2f45"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_034.parquet",
+      "sha256": "3f081dc4c0bd6121f38d8309aeb4e51c4feaa60ae09fd089304c23aca42a120d"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_035.parquet",
+      "sha256": "6e1f864e3a9a0fe401b202d19600ed72b957a0683e9495ab841e14479aa9256b"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_036.parquet",
+      "sha256": "4370cb65d6120c92760c0815ada0d620a907235aa9ce0333974330d8b0fb2031"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_037.parquet",
+      "sha256": "a33525b7af68950edbe1e629790af0abeab6bcb1569ab963f9e018c2f9cdbea8"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_038.parquet",
+      "sha256": "fc23ff3949bfd72c8957a9728cf85d065af3ad314763dc67283d51bd28bdb47b"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_039.parquet",
+      "sha256": "42071de67d78d9c9abc3324ddf21e0d7fbbf1c39b2a85f639fc8f0cedfc9fed7"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_040.parquet",
+      "sha256": "7a19d693ed052acaa1b1b1dd774b8cc45ad714db11bf675aa7c9bb72f0b0fc3d"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_041.parquet",
+      "sha256": "d65fb1174baec22769383976b5943f9d28963ec20e4d0917f8d63f5e97df756e"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_042.parquet",
+      "sha256": "e0c91459d3c03d620918f34a0b0f7f0b690a58b21e21c21cd234ed3f9dff5133"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_043.parquet",
+      "sha256": "64d38e72dedcd42f78d62415e70533eb4b2259dd531f1de35679c3b531309451"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_044.parquet",
+      "sha256": "f2dcfd69e90b266f9a77ddb92d30665737bcae3c4929e65ad46b56055955c9de"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_045.parquet",
+      "sha256": "91cedcba1111d358b2a30ec4870885955440d2c80d1a7b1dcc3456b44edd2552"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_046.parquet",
+      "sha256": "1b47239c512416d10836ced04bce8e744379f49851c2adc49c0d08af83550f9b"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_047.parquet",
+      "sha256": "e5ed336ae07f120660a4115914605e0c75a44fc85e0785063be5c33f47083bbc"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_048.parquet",
+      "sha256": "f3ac64cde29c03999110b2b8870a70a2c1739caa9ef70be0bee6bb4157d2863d"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_049.parquet",
+      "sha256": "aff43c2be6b1e3c9f28833849051b706abd9c14309d5ff2fe7c98a56e7c6793f"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_050.parquet",
+      "sha256": "8ee1604b7e9ea3cabebb8ae76f036917c35260379fb12bd2cc5bf6cd50230952"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_051.parquet",
+      "sha256": "9adc707a6d25c0813dfb64168464f5231b7557dc2abbe960c0293b33c4665612"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_052.parquet",
+      "sha256": "fd24152b19f53440647df0c25d917028cfc889c7bdb03365c6e92a9a0af1755d"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_053.parquet",
+      "sha256": "7a589acec60b5ffde9c33dbad8898a4a9aa3d6ca40969fc96a2f66d12fbe6a04"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_054.parquet",
+      "sha256": "774d8378a9566fc4d7b52c79c0844a3662859b8648501fe53600e6753f7811d5"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_055.parquet",
+      "sha256": "48a913332e29bb318f2711ad92619f2a4de099f43b5323a43ae6df97849c8125"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_056.parquet",
+      "sha256": "c1a4ad1bfda8a8c85059632c35713521de4eba01e27abc5b09d6635f664ecfda"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_057.parquet",
+      "sha256": "0005fd5fad3b8488a4713ef4cd7ebb87f99dca1225c8027f9729a3127a59cdf3"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_058.parquet",
+      "sha256": "d995a8bb20f234af19a7aed962aea3444108574140a1222a87689034bef89d08"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_059.parquet",
+      "sha256": "f99aac8c3ccbbb1e3b62daa328e5574734f03e3d05a22ab748a35e47e82637fe"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_060.parquet",
+      "sha256": "57a5f1170295004a0ba19c45c394b1af9cf7afc2598bc8906c06288e9cac0a47"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_061.parquet",
+      "sha256": "24da98772052862534d95f71e417e5b9ad1baac9fff14420aaac99d1a1efa63c"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_062.parquet",
+      "sha256": "2ef05c175b025b9d3382a4ed560760de9ff655ad209d5cab08c517a8a1c80f7e"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_063.parquet",
+      "sha256": "7e7a01d5592af2e9c03b0e8f17fd12144749eb30b3bfaf58e9a67160d4c34ffc"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_064.parquet",
+      "sha256": "f88f282fae0bb074b939dd5ee48980a319435fdf4af9f43e665f9e9d224d18ca"
+    },
+    {
+      "file": "results\\crafted_full\\predictions_065.parquet",
+      "sha256": "848fbb2dc3a7b7a558e1764c04e344da0e13bd7509e14033ac97e76d08d98808"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+CRAFTED THERMAL OBSERVABLE: FUGACITY AND HEAT-REFERENCE AUDIT
+Date: 2026-10-07, Asia/Taipei
+Scope: independent derivation and primary-source definition check. Only this report is written; no algorithm or raw value changed.
+
+VERDICT
+The proposed comparison is correct: convert reported pressure to the source-consistent fugacity f=P*phi_PR(T,P), evaluate the independent-site model as q(T,f), and compare its fugacity-isostere heat with MINUS the reported CRAFTED adsorption enthalpy. Do not add another RT term or a Peng–Robinson residual enthalpy to this reported observable. Those operations would change its definition. A real-bulk-gas differential enthalpy or a pressure-based isostere is a different quantity, distinguished below.
+
+1. PRIMARY SOURCE ACTUALLY INSPECTED
+Official CRAFTED article PDF:
+https://www.nature.com/articles/s41597-023-02116-z.pdf
+Scientific Data 10,230 (2023), DOI 10.1038/s41597-023-02116-z, printed page 4.
+The method states that fugacities are calculated with Peng–Robinson and the parameters in Table 3. Uptake is explicitly absolute adsorption in mol/kg. Equation (4) defines adsorption enthalpy as the energy/number covariance divided by number variance, minus RT; values are in kJ/mol and computed by pyMSER. Table 3 gives CO2 Tc=304.1282 K, Pc=7377300 Pa, omega=0.22394; N2 Tc=126.192 K, Pc=3395800 Pa, omega=0.0372.
+The pyMSER authors' primary preprint independently states the rigid-host/rigid-molecule expression in equation (8):
+https://arxiv.org/html/2403.19387v1
+The official HTML CRAFTED page initially redirected to an inaccessible identity service; the publisher PDF was readable and was used for the equation/table check. This is therefore not inferred from an absent FugacityCoefficient input flag.
+
+2. DERIVATION OF THE REPORTED FLUCTUATION OBSERVABLE
+Consider a fixed rigid simulation cell, a single rigid molecular species and a temperature-independent configurational potential. Let N be molecular count and let Ubar be the configurational energy scaled into molar energy units (equivalently N_A times the per-box energy). The configurational grand-canonical weight has the form
+ probability proportional to lambda^N/N! * exp[-beta_m*Ubar],
+ beta_m=1/(R*T), lambda proportional to f/T.
+Temperature-independent unit and volume factors in lambda do not affect the following derivatives. Integrated ideal molecular momentum/internal factors cancel against the reservoir reference in the standard rigid-molecule activity convention. They must not be added again as an extra energy term after using this expression.
+
+The exact fluctuation derivatives are
+ partial<N>/partial ln lambda = Var(N),
+ partial<N>/partial beta_m at fixed lambda = -Cov(Ubar,N).
+Let y=1/T. Along an isostere of the absolute molecular count,
+ 0=Var(N)*[d ln f/dy + T] - Cov(Ubar,N)/R,
+because ln lambda=ln f+ln y+constant. Therefore
+ q_f := -R*(d ln f/d(1/T))_<N>
+      = R*T - Cov(Ubar,N)/Var(N)
+      = -DeltaH_CRAFTED.
+
+The RT term is produced by differentiating the activity's 1/T factor. It is already present in the reported CRAFTED equation. This derivation concerns the same simulated absolute count, rigid potential and fugacity activity; it does not assume pressure equals fugacity.
+If energies are first expressed per molecule rather than in molar units, use k_B and U instead of R and Ubar, then multiply the result by N_A. Mixing these conventions would introduce a unit error. The source's final enthalpy CSV is already in kJ/mol.
+
+3. PREDICTION BY THE INDEPENDENT-SITE DICTIONARY
+For q(T,f)=sum_i Q_i*theta_i with
+ theta_i=sigmoid[ln(f/f0)+E_i/(R*T)-s_i/R],
+and temperature-independent Q_i,E_i,s_i, differentiating q at fixed q gives
+ q_f,pred = [sum_i Q_i*E_i*theta_i*(1-theta_i)]
+            /[sum_i Q_i*theta_i*(1-theta_i)].
+Thus q_f,pred is compared directly with -DeltaH_CRAFTED at the same T and f. E_i is the dictionary's effective fugacity-isostere enthalpy parameter, not a bare configurational well depth to which RT still needs adding. A single site gives q_f=E. An energy distribution generally gives loading- and temperature-dependent q_f; that variation does not alone refute the distribution model.
+
+The derivative requires nonzero susceptibility. Very small number fluctuations or model sum_i Q_i theta_i(1-theta_i) make the estimate poorly conditioned; retain uncertainty/quality flags rather than interpreting an unstable quotient as precise thermodynamic information. Temperature-varying force fields, host flexibility, molecular internal-energy terms or excess rather than absolute loading would require a modified derivation.
+
+4. ROLE OF PENG–ROBINSON IN THIS COMPARISON
+Peng–Robinson supplies the coordinate transformation from each archived T,P state to the fugacity imposed on the GCMC system. Use the documented critical parameters and source-compatible EOS/root convention. Preserve the original pressure in Pa and store the converted fugacity with units; in the dictionary ln(f/f0), f and f0 must be in the same unit (normally bar and 1 bar).
+Once data are expressed as q(T,f), q_f,pred differentiates with respect to inverse temperature at constant uptake in the fugacity coordinate. No separate PR enthalpy correction belongs in a comparison to the source's RT-covariance observable. Applying phi to the pressure coordinate and then adding an ad hoc RT or PR correction to one heat column would compare unlike quantities.
+At low pressure phi may be close to one, but using the source EOS is preferable to assuming exact ideality. The absence of an explicit coefficient in an individual input file does not override the publisher's documented EOS setup.
+
+5. DISTINCTION FROM REAL-BULK-GAS CALORIMETRIC HEAT
+Let f=P*phi(T,P), define the pressure-isostere quantity q_P=-R*(d ln P/d(1/T))_q, and let h_g^R be the bulk gas residual enthalpy relative to its ideal-gas reference. For a thermodynamically consistent pure-fluid EOS,
+ (partial ln f/partial ln P)_T=Z,
+ h_g^R=R*(partial ln phi/partial(1/T))_P.
+The chain rule then gives
+ q_f=Z*q_P-h_g^R.
+Therefore a pressure slope, a fugacity slope and a heat referenced to a real bulk reservoir must not be interchanged. Under the corresponding negligible-adsorbed-volume rigid-phase convention, the real-bulk-reference differential desorption heat is q_real=q_f+h_g^R=Z*q_P. Equivalently, its adsorption enthalpy is DeltaH_real=DeltaH_CRAFTED-h_g^R. Host/volume work and other nonideal contributions outside that convention would require their own treatment.
+
+This conversion is relevant ONLY if the scientific target is changed to that real-bulk-reference enthalpy. It is not a correction needed to reproduce or test the CRAFTED-reported observable. PR fugacity being used in GCMC does not imply that a PR residual enthalpy was added to the pyMSER energy-fluctuation export.
+
+6. PATH-HEAT AND VALIDATION SCOPE
+Success in predicting -DeltaH_CRAFTED supports a withheld thermodynamic-observable test within the simulator's reference convention. It does not validate device regeneration heat, a real-gas calorimetric experiment, or the unique microscopic identity of the fitted E_i,s_i. Uptake and enthalpy from a common GCMC trajectory also share sampling/systematic errors.
+The existing heterogeneous-path warning remains essential. Its endpoint binding heat is sum_i Q_i E_i*(theta_a,i-theta_d,i). In general it cannot be replaced by one q_f value times total release. With M_k=sum_i Q_i E_i^k theta_i(1-theta_i), the binding differential is
+ -sum_i Q_i E_i*dtheta_i=-q_f*dq+[M_2-M_1^2/M_0]/(R*T^2)*dT.
+The additional site-redistribution contribution is already contained in the resolved endpoint sum. A successful q_f fit must not be used to silently simplify that path balance.
+
+RECOMMENDED METHODS WORDING
+'Reported pressures were converted to fugacities using the Peng–Robinson equation and the critical parameters documented for CRAFTED. The withheld thermal observable was defined as the negative of the reported adsorption enthalpy, q_f=-DeltaH_CRAFTED. Under the source's rigid configurational GCMC convention, this equals -R(partial ln f/partial(1/T))_q. The independent-site dictionary predicts it by susceptibility-weighted averaging of site enthalpies. No additional RT or residual-gas-enthalpy correction was applied, because the comparison targets the exported observable rather than real-gas calorimetric regeneration heat.'

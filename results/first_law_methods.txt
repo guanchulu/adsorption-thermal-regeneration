@@ -1,0 +1,7 @@
+Independent first-law numerical cross-check
+
+For each of the 54 retained homogeneous path witnesses, we independently reconstructed q(T,f) using the hyperbolic-tangent occupation identity and evaluated gas enthalpy from the analytical Shomate primitive. The bed internal energy was U=C(T-Ta)+q[h_g(T)-E]. Heat was calculated as Delta U + integral h_g dn_out, with dn_out=-dq. The isothermal pressure leg used exact endpoint inventory and a constant gas enthalpy. Heating used 250, 1000 and 4000 equal temperature intervals with trapezoidal enthalpy weighting of the released gas in each interval. This implementation did not call the original occupation, heat-capacity or binding-plus-sensible-heat integrator. The original 96-point Gauss-Legendre implementation was used only for comparison.
+
+At 4000 intervals, the maximum absolute heat difference was 1.4834922e-07 kJ kg^-1 and the maximum relative difference was 8.657266e-10. Shifting the common enthalpy zero by +/-1000 kJ mol^-1 changed total heat by at most 2.3305802e-12 kJ kg^-1 across all meshes and cases.
+
+This verifies numerical closure, sign conventions, molecular cluster normalization and enthalpy-reference invariance for the tested model paths. It does not independently validate the constant-E caloric model, the Shomate correlation, material parameters, transport, kinetics, mixtures, pressure work, or measured process duty.

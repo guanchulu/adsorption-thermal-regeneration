@@ -1,0 +1,52 @@
+{
+  "isotherm": 97704,
+  "enthalpy": 97704,
+  "sidecars_skipped": 301294,
+  "point_records_with_uptake_and_enthalpy": 1270152,
+  "source_structure_ids": 1357,
+  "temperature_groups": 32568,
+  "three_temperature_groups": 32568,
+  "missing_enthalpy_values": 0,
+  "nonfinite_enthalpy_values": 1249,
+  "low_pressure_records_le_1bar": 977040,
+  "gas_counts": [
+    {
+      "gas": "CO2",
+      "len": 48852
+    },
+    {
+      "gas": "N2",
+      "len": 48852
+    }
+  ],
+  "charge_counts": [
+    {
+      "charge": "NEUTRAL",
+      "len": 16284
+    },
+    {
+      "charge": "PACMOF",
+      "len": 16284
+    },
+    {
+      "charge": "MPNN",
+      "len": 16284
+    },
+    {
+      "charge": "Qeq",
+      "len": 16284
+    },
+    {
+      "charge": "EQeq",
+      "len": 16284
+    },
+    {
+      "charge": "DDEC",
+      "len": 16284
+    }
+  ],
+  "source": "https://doi.org/10.5281/zenodo.10120180",
+  "version": "2.0.1",
+  "evidence_type": "GCMC simulation; modeling variants are repeated conditions within each structure",
+  "elapsed_seconds": 143.15700000000652
+}

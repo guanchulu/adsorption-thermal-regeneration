@@ -1,0 +1,21 @@
+{
+  "case_id": "santori_luberti_2016_13x_model",
+  "capacity_1_mol_kg": 3.573,
+  "capacity_2_mol_kg": 1.789,
+  "b01_per_kPa": 1.681e-8,
+  "b02_per_kPa": 3.812e-9,
+  "binding_1_kJ_mol": 35.00,
+  "binding_2_kJ_mol": 49.26,
+  "dry_cp_kJ_kg_K": 0.858,
+  "adsorption_K": 298.0,
+  "fa_bar": 0.15,
+  "fd_bar": 0.10,
+  "temperature_cap_K": 423.0,
+  "source_model_min_K": 298.0,
+  "source_model_max_K": 500.0,
+  "underlying_measurement_temperatures_K": [303.0, 323.0],
+  "parameter_source_doi": "10.1016/j.susmat.2016.09.001",
+  "underlying_equilibrium_doi": "10.1021/je900303y",
+  "source_locator": "Author manuscript printed p8 (PDF p9), Eq29 and Table8; applied domain Fig4-6",
+  "status": "literature-model illustration; heat capacity assumed in source; no cycle-duty validation; fitted DSL applicability at 298 and above323K is not independently validated"
+}

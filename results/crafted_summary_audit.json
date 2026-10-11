@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "audit_date": "2026-10-08",
+  "batch_files_per_type": 66,
+  "raw_structures": 1357,
+  "attempted_groups": 32568,
+  "matched_groups": 32453,
+  "matched_structure_union": 1355,
+  "zero_signal_groups": 115,
+  "nonconverged_models": 0,
+  "unique_metric_rows": 97474,
+  "successful_model_rows": 97359,
+  "unique_prediction_rows": 876231,
+  "finite_heat_points_per_physical_model": 291917,
+  "shared_heat_rows_two_models": 583834,
+  "source_nonfinite_heat_points": 160,
+  "matched_groups_without_finite_source_heat": 7,
+  "all_finite_source_heat_predicted_by_both": true,
+  "max_all_group_nrmse_reconstruction_error": 5.684341886080802e-14,
+  "max_common_heat_mae_reconstruction_error": 1.4210854715202004e-14,
+  "stratified_summary_rows_checked": 72,
+  "structure_metric_rows_checked": 8121,
+  "source_ids_absent_after_gates": [
+    "13030N2",
+    "SOWYIM"
+  ],
+  "reference_summary": [
+    {
+      "gas": "CO2",
+      "force_field": "DREIDING",
+      "charge": "DDEC",
+      "model": "fugacitywise_inverse_temperature",
+      "groups": 1352,
+      "structures": 1352,
+      "median_uptake_nrmse": 0.004628372970473458,
+      "p90_uptake_nrmse": 0.0530997590018399,
+      "median_common_heat_mae": null,
+      "common_heat_points": 0,
+      "groups_with_common_heat": 0
+    },
+    {
+      "gas": "CO2",
+      "force_field": "DREIDING",
+      "charge": "DDEC",
+      "model": "independent_site_dictionary",
+      "groups": 1352,
+      "structures": 1352,
+      "median_uptake_nrmse": 0.010937309364266066,
+      "p90_uptake_nrmse": 0.0307863364984117,
+      "median_common_heat_mae": 5.335318696316584,
+      "common_heat_points": 12168,
+      "groups_with_common_heat": 1352
+    },
+    {
+      "gas": "CO2",
+      "force_field": "DREIDING",
+      "charge": "DDEC",
+      "model": "thermal_langmuir",
+      "groups": 1352,
+      "structures": 1352,
+      "median_uptake_nrmse": 0.00324275916532774,
+      "p90_uptake_nrmse": 0.024742429082911722,
+      "median_common_heat_mae": 1.5917067906391003,
+      "common_heat_points": 12168,
+      "groups_with_common_heat": 1352
+    },
+    {
+      "gas": "N2",
+      "force_field": "DREIDING",
+      "charge": "DDEC",
+      "model": "fugacitywise_inverse_temperature",
+      "groups": 1351,
+      "structures": 1351,
+      "median_uptake_nrmse": 0.0023206451261626204,
+      "p90_uptake_nrmse": 0.005026995827173124,
+      "median_common_heat_mae": null,
+      "common_heat_points": 0,
+      "groups_with_common_heat": 0
+    },
+    {
+      "gas": "N2",
+      "force_field": "DREIDING",
+      "charge": "DDEC",
+      "model": "independent_site_dictionary",
+      "groups": 1351,
+      "structures": 1351,
+      "median_uptake_nrmse": 0.01450904836415691,
+      "p90_uptake_nrmse": 0.031639877323066896,
+      "median_common_heat_mae": 6.419522735436351,
+      "common_heat_points": 12155,
+      "groups_with_common_heat": 1351
+    },
+    {
+      "gas": "N2",
+      "force_field": "DREIDING",
+      "charge": "DDEC",
+      "model": "thermal_langmuir",
+      "groups": 1351,
+      "structures": 1351,
+      "median_uptake_nrmse": 0.0014918020171982838,
+      "p90_uptake_nrmse": 0.003486895820706356,
+      "median_common_heat_mae": 0.34631517590009825,
+      "common_heat_points": 12155,
+      "groups_with_common_heat": 1351
+    }
+  ],
+  "hashes": {
+    "code\\summarize_crafted.py": "a0416b34ef8615e77eb415a7396d23ede81d4ec3a96551d1738493f617371356",
+    "results\\crafted_full_metrics.parquet": "cde1d3aee6aa9853add1c3fe9f84827744e503b11adad60035c3e47c227ae69c",
+    "results\\crafted_matched_metrics.parquet": "4b78cd9c1434bfc15eefbe5c55407634d185027624b714988f123bb3ad7f8bc5",
+    "results\\crafted_final_summary.json": "d677d6b99c47813ded1109e9fdcd24c9acabd0642fc653a04262881bcebb9577"
+  }
+}

@@ -1,0 +1,4 @@
+model,groups,dois,median_test_nrmse,heldout_atleast353K,capacity_boundary_fits,converged
+pressurewise_logq_vanthoff,32,25,0.03492762652190626,9,0,32
+thermal_langmuir,32,25,0.0307924274814411,9,1,32
+constant_temperature_langmuir,32,25,0.22056304343149097,9,1,32

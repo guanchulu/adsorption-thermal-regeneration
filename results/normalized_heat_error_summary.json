@@ -1,0 +1,26 @@
+{
+  "cohort": "CO2 / DREIDING / DDEC / thermal_langmuir",
+  "definition": "Per-structure MAE divided by mean absolute reference enthalpy on the identical finite common heat support; median across structures.",
+  "structures": 1352,
+  "valid_relative_structures": 1351,
+  "zero_reference_scale_structures": [
+    "19023N3"
+  ],
+  "median_normalized_mae_percent": 8.396771382758619,
+  "normalized_mae_percent_q25_q75": [
+    4.201769008993934,
+    13.144665407990509
+  ],
+  "reference_scale_median_kj_mol": 22.380190555555558,
+  "reference_scale_q25_q75": [
+    14.55347833333333,
+    30.26752638888889
+  ],
+  "original_absolute_mae_max_discrepancy": 7.105427357601002e-15,
+  "numpy_crosscheck": true,
+  "extra_structure_ids_in_other_CO2_variants": [
+    "LIHRIE",
+    "PEPXIS",
+    "YUWHOO"
+  ]
+}

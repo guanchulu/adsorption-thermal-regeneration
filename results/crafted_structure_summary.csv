@@ -1,0 +1,7 @@
+gas,model,structures,median_structure_uptake_error,median_structure_heat_error
+N2,thermal_langmuir,1352,0.001444434059693793,0.3490224149935652
+CO2,fugacitywise_inverse_temperature,1355,0.00410452355401182,
+N2,fugacitywise_inverse_temperature,1352,0.0021617921268811263,
+N2,independent_site_dictionary,1352,0.014557468974553145,7.042190188283314
+CO2,thermal_langmuir,1355,0.003209343701720149,1.650685150278172
+CO2,independent_site_dictionary,1355,0.011921116861966122,6.208883924216686

@@ -1,0 +1,67 @@
+HOT SOURCE PROVENANCE CHECK — 2026-10-07
+Scope: read-only verification of the six retained Zeolite 13X records under DOI 10.1007/s10450-020-00296-3. Only this report was written in the project. No dataset, category, uptake convention, temperature or source override was changed.
+
+VERDICT
+The public Springer supporting document confirms that Figure A.6 contains experimental symbols reproduced from Son et al. (2018), alongside model lines. The original experimental-source attribution is therefore confirmed, rather than inferred solely from the NIST exp tag. This is one reused experimental dataset for one material, not new independent experiments by Tun and Chen and not six independent sources/materials. The six NIST numeric series are visually consistent with the experimental symbol sequences, but complete point-by-point digitization certification and the exact A.6 subpanel used by the NIST digitizer remain unresolved. Absolute versus excess uptake remains UNVERIFIED and must remain unknown.
+
+PRIMARY SOURCES ACTUALLY ACCESSED
+1. Tun, H.; Chen, C.-C. Isosteric heat of adsorption from thermodynamic Langmuir isotherm. Adsorption 27, 979–989 (2021), published online 27 January 2021.
+   https://link.springer.com/article/10.1007/s10450-020-00296-3
+   The public landing page, abstract, references and supplementary link were readable. Main article body is subscription-restricted in this access session.
+2. Official Springer supplementary DOCX, downloaded successfully from the publisher and inspected as Word XML plus original embedded figure images:
+   https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs10450-020-00296-3/MediaObjects/10450_2020_296_MOESM1_ESM.docx
+   SHA256: b8ac153591df6bdafbfd3010cf59d1630c12da52aeaabfe743e40601cef4122d7
+   This public supplement, rather than an inaccessible article body, provides the decisive figure-caption and source-reference evidence.
+3. Son, K. N.; Cmarik, G. E.; Knox, J. C.; Weibel, J. A.; Garimella, S. V. Measurement and Prediction of the Heat of Adsorption and Equilibrium Concentration of CO2 on Zeolite 13X. J. Chem. Eng. Data 63(5), 1663–1674 (2018).
+   https://pubs.acs.org/doi/10.1021/acs.jced.8b00019
+   Publisher-indexed abstract and metadata were readable through web search; direct page fetching returned HTTP403, and the complete experimental Methods were not obtained. The abstract describes pure-CO2 measurements on zeolite13X pellets, 0–200 C and0.001–100kPa, together with model fitting. This supports experimental origin but does not settle the absolute/excess convention.
+4. Official correction to Son et al.:
+   https://pubs.acs.org/doi/10.1021/acs.jced.0c00546
+   Publisher text states that the original Figure5 inadvertently duplicated Figure2 and replaces the heat-of-adsorption comparison figure. This is not evidence of a wholesale invalidation of the isotherm measurements, nor permission to assume other unverified details. The correction must accompany any reconstruction from the original article.
+
+FIGURE AND REFERENCE CHAIN
+The official supplement section A.6 is the pure-component CO2/zeolite13X isotherm comparison and explicitly cites reference[3]. Supplement reference[3] is Son et al.2018, JCED63(5),1663–1674. The main Springer reference list independently identifies the same Son paper.
+
+Figure A.6 has eight panels:
+  a,b: Langmuir, log-log and linear;
+  c,d: Toth, log-log and linear;
+  e,f: dual-site Langmuir, log-log and linear;
+  g,h: thermodynamic Langmuir, log-log and linear.
+The figure caption explicitly says: "symbols are experimental data and lines are model results".
+The same experimental series is repeated among these model-comparison panels. Repeated panels are not additional measurements.
+
+DIRECT IMAGE INSPECTION
+Inspected original embedded image1.png (A.6a), image2.png (A.6b) and image7.png (A.6g), each3216x2461 pixels. A.6a and A.6b show experimental symbols separated from the Langmuir dashed lines; A.6g contains the same symbols and different thermodynamic-Langmuir fitted lines. The six retained temperatures correspond to the following marker series:
+  298.15K: green upward triangles;
+  323.15K: blue downward triangles;
+  373.15K: magenta leftward triangles;
+  398.15K: olive rightward triangles;
+  423.15K: navy hexagons;
+  448.15K: purple stars.
+NIST metadata specifies only Figure A.6, not a,b,...,h. Therefore the precise digitized panel cannot be claimed from the archive record.
+
+The retained numeric points follow the irregularly spaced marker sequences and their high-pressure levels. For example, the database298K series ends at about0.963bar and5.196mmol/g, corresponding to the green experimental series above the green Langmuir dashed line in A.6b; the323K and373K high-pressure values likewise track their symbols rather than the displaced Langmuir dashed curves. This is positive visual consistency evidence for symbol digitization. It is not a certified overlay of all154 selected points, and other model curves lie close to some symbols. Do not convert this scoped check into a claim that every database point is a direct author-supplied measurement.
+
+DATABASE RECORD MAPPING (all NIST category exp; digitizer Eliana Mannes; all source Figure A.6)
+databaseT_K,source_legendT_K,curve_id,points,pmin_bar,pmax_bar
+298,298.15,ac6d64b3a4a96458529be929,35,0.00002,0.96286
+323,323.15,2655f224319aec010d3b37bf,31,0.00007,0.96190
+373,373.15,b57fd8652f037c3b19d510e7,24,0.00529,0.98381
+398,398.15,79fe98ca599d81b73e4ecf22,21,0.00529,0.98762
+423,423.15,0e0eb9f05cbb6af89222c20d,22,0.00522,0.98571
+448,448.15,d0b9d35985e48223fc326fbf,21,0.00529,0.98571
+Total154 selected digitized points. The selected curves correspond to Isotherm3,4,6,7,8,9.json under Library/10.1007s10450020002963 in the pinnedNIST archive.
+
+UNITS AND TEMPERATURES
+The inspected publisher figure axes explicitly use pressure inbar and amount adsorbed in mol/kg. The NIST mmol/g uptake unit is numerically equivalent to mol/kg, so no scale-factor discrepancy is indicated by these axes. This establishes units for Figure A.6, not the absolute/excess thermodynamic convention.
+The original figure legends carry temperatures ending in .15K; NIST stores the six values as integerK. This0.15K metadata difference is confirmed. It was NOT silently corrected here. Any later source-adjudicated temperature correction must preserve the original database values and its provenance.
+
+ABSOLUTE / EXCESS AND ACCESS LIMIT
+All six NIST isotherm_type fields are empty. Neither the accessible Springer figure axes/caption nor the accessible ACS abstract explicitly establishes an absolute or excess uptake definition. The original Son experimental Methods, including any buoyancy/adsorbed-volume correction, were not inspected. Thus neither absolute nor excess is confirmed. Low pressure and the use of Langmuir models do not establish the convention by themselves. Retain unknown; do not fit or report it as verified absolute occupancy without additional primary-method evidence.
+
+SOURCE DEPENDENCE / VALIDATION CONSEQUENCE
+The experimental provenance is Son2018 -> Tun&Chen2021 supplementary FigureA.6 -> NIST digitization -> current six-temperature subset. Son2018 and Tun&Chen2021 belong to one experimental-source family for leakage control. A read-only search of the current39988-record inventory found no records stored directly under DOI10.1021/acs.jced.8b00019, but that absence does not turn the Tun paper into an independent experimental source. If original Son data are added later, they must be joined to this source family before train/test splitting or counting independent validation.
+The six temperatures provide six conditions on one registered material, with correlated provenance and possible common experimental/digitization errors. They are not six materials, six independent sources, or six independent replications. A withheld temperature can test interpolation/generalization within that dataset; it is not independent laboratory validation or proof of a microscopic site mechanism.
+
+RECOMMENDED WORDING
+Publicly digitized CO2/zeolite13X isotherms at six temperatures, reproduced in Tun and Chen's supplementary FigureA.6 from the measurements of Son et al., were used as a source-dependent case study. The measured-symbol provenance and figure units were checked against the publisher supplement; the database's unspecified absolute/excess convention and0.15K temperature-label difference were retained explicitly.

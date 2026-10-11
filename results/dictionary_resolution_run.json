@@ -1,0 +1,66 @@
+{
+  "scope": "posthoc_fixed_pilot_grid_diagnostic_not_model_selection",
+  "attempted": 100,
+  "eligible": 99,
+  "excluded": [
+    {
+      "structure_id": "PEPXIS",
+      "status": "ineligible_under_frozen_masks"
+    }
+  ],
+  "dictionary_atoms": [
+    525,
+    2009
+  ],
+  "primary_sha256_unchanged": "4b78cd9c1434bfc15eefbe5c55407634d185027624b714988f123bb3ad7f8bc5",
+  "pilot_sha256": "123eb2b9632ace72d78996ad7f5c6bc14a084f2e34d9a3ba91c85d060f8a7b3a",
+  "script_sha256": "bbb08589cc3fd99ac5e0915207bb40a7a4f6ad320a37bb9109a6571a460ecafc",
+  "points_sha256": "d38806e91e8a2a323e2f29b4ae1898af415b74c68c64824342b93654df521de2",
+  "dependency_sha256": {
+    "crafted_benchmark.py": "7efc312ae9760f47067f3ba66b88337d803130ddb823a71978e12543e33353ac",
+    "physical_dictionary.py": "839bb8bf3e1962d5d9baf76ea5e8f6ff5ab8447a0ee7bd17d3febdb4e78833c2",
+    "gas_fugacity.py": "fb4e8bace3a3e19f63ab631fb00963e4d04492ce086ad00903de1d245ddf53db"
+  },
+  "elapsed_seconds": 1.4664956000051461,
+  "summary": [
+    {
+      "n": 99,
+      "median_coarse_train_nrmse": 0.003925613259836017,
+      "median_coarse_test_nrmse": 0.011189301369674075,
+      "median_coarse_heat_mae": 5.393719837897132,
+      "median_coarse_capacity": 2971.3322406106313,
+      "median_coarse_energy_boundary_fraction": 0.014124108832687035,
+      "median_coarse_affinity_boundary_fraction": 0.998037550801598,
+      "median_coarse_energy_boundary_capacity": 0.3714039553997897,
+      "median_coarse_affinity_boundary_capacity": 2965.501152036859,
+      "median_coarse_active_atoms": 4.0,
+      "median_fine_train_nrmse": 0.003675292736272908,
+      "median_fine_test_nrmse": 0.005630500888069533,
+      "median_fine_heat_mae": 2.2782570384295737,
+      "median_fine_capacity": 2880.4920908652543,
+      "median_fine_energy_boundary_fraction": 0.0,
+      "median_fine_affinity_boundary_fraction": 0.9973823376511307,
+      "median_fine_energy_boundary_capacity": 0.0,
+      "median_fine_affinity_boundary_capacity": 2879.144029375407,
+      "median_fine_active_atoms": 3.0,
+      "median_change_train_nrmse": -2.3332989676333547e-05,
+      "median_change_test_nrmse": -0.0005634812244896866,
+      "median_change_heat_mae": -0.01761724065284298,
+      "median_change_capacity": -0.005264764073041661,
+      "median_change_energy_boundary_fraction": 0.0,
+      "median_change_affinity_boundary_fraction": 0.0,
+      "median_change_energy_boundary_capacity": 0.0,
+      "median_change_affinity_boundary_capacity": 0.0,
+      "median_change_active_atoms": 0.0,
+      "improved_train_nrmse": 90,
+      "worsened_train_nrmse": 0,
+      "tied_train_nrmse": 9,
+      "improved_test_nrmse": 57,
+      "worsened_test_nrmse": 41,
+      "tied_test_nrmse": 1,
+      "improved_heat_mae": 51,
+      "worsened_heat_mae": 47,
+      "tied_heat_mae": 1
+    }
+  ]
+}
